@@ -8,10 +8,12 @@
 
 #import "PlayerViewController.h"
 #import <SGPlayer/SGPlayer.h>
+#import "XLVideoPlayer.h"
 
 @interface PlayerViewController ()
 
 @property (nonatomic, strong) SGPlayer * player;
+@property (nonatomic, strong) XLVideoPlayer * videoPlayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UISlider *progressSilder;
@@ -27,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     self.player = [SGPlayer player];
     [self.player registerPlayerNotificationTarget:self
@@ -39,33 +41,59 @@
         NSLog(@"player display view did click!");
     }];
     [self.view insertSubview:self.player.view atIndex:0];
+    [self.view addSubview:self.videoPlayer];
     
     static NSURL * normalVideo = nil;
     static NSURL * vrVideo = nil;
+    static NSURL * liveVideo = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         normalVideo = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"i-see-fire" ofType:@"mp4"]];
-        vrVideo = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"google-help-vr" ofType:@"mp4"]];
+//        vrVideo = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"google-help-vr" ofType:@"mp4"]];
+        vrVideo = [NSURL URLWithString:@"http://media.snxw.com/masvod/public/2017/04/11/20170411_15b5b277d53_r1_1200k.mp4"];
+        liveVideo = [NSURL URLWithString:@"http://cstv.live.wscdns.com/live/xiamen/playlist.m3u8"];
     });
     switch (self.demoType)
     {
         case DemoType_AVPlayer_Normal:
             [self.player replaceVideoWithURL:normalVideo];
+            [self.videoPlayer replaceVideoWithURL:normalVideo];
+            break;
+        case DemoType_AVPlayer_live:
+            [self.player replaceVideoWithURL:liveVideo];
+            [self.videoPlayer replaceVideoWithURL:liveVideo];
             break;
         case DemoType_AVPlayer_VR:
             [self.player replaceVideoWithURL:vrVideo videoType:SGVideoTypeVR];
+            [self.videoPlayer replaceVideoWithURL:vrVideo videoType:SGVideoTypeVR];
             break;
         case DemoType_AVPlayer_VR_Box:
             self.player.displayMode = SGDisplayModeBox;
             [self.player replaceVideoWithURL:vrVideo videoType:SGVideoTypeVR];
+            [self.videoPlayer replaceVideoWithURL:vrVideo videoType:SGVideoTypeVR displayMode:SGDisplayModeBox];
             break;
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.videoPlayer destroyPlayer];
+    self.videoPlayer = nil;
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.player.view.frame = self.view.bounds;
+    self.player.view.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 200);
+}
+
+- (XLVideoPlayer *)videoPlayer {
+    if (!_videoPlayer) {
+        _videoPlayer = [[XLVideoPlayer alloc] init];
+        _videoPlayer.frame = CGRectMake(0, 220, CGRectGetWidth([UIScreen mainScreen].bounds), 200);
+    }
+    return _videoPlayer;
 }
 
 + (NSString *)displayNameForDemoType:(DemoType)demoType
@@ -74,6 +102,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         displayNames = @[@"i see fire,   AVPlayer",
+                         @"厦门卫视直播 m3u8",
                          @"google help,  AVPlayer,  VR",
                          @"google help,  AVPlayer,  VR,  Box"];
     });

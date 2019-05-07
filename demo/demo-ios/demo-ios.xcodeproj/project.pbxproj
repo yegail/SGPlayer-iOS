@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7959ADE8228131BA009F114A /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7959ADE7228131BA009F114A /* ImageResources.bundle */; };
+		7959ADEB228131F3009F114A /* XLVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADEA228131F3009F114A /* XLVideoPlayer.m */; };
+		7959ADEC22813847009F114A /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADE52281318F009F114A /* XLSlider.m */; };
+		7959ADEF22817CA9009F114A /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */; };
 		9C02F6511E79293A00932489 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F64F1E79293A00932489 /* PlayerViewController.m */; };
 		9C02F6521E79293A00932489 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C02F6501E79293A00932489 /* PlayerViewController.xib */; };
 		9C36DD461E79538500959FDA /* google-help-vr.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9C36DD441E79538500959FDA /* google-help-vr.mp4 */; };
@@ -28,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7959ADE42281318F009F114A /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		7959ADE52281318F009F114A /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		7959ADE7228131BA009F114A /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		7959ADE9228131F3009F114A /* XLVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoPlayer.h; sourceTree = "<group>"; };
+		7959ADEA228131F3009F114A /* XLVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoPlayer.m; sourceTree = "<group>"; };
+		7959ADED22817CA8009F114A /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		9C02F64E1E79293A00932489 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		9C02F64F1E79293A00932489 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		9C02F6501E79293A00932489 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7959ADE62281318F009F114A /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				7959ADE7228131BA009F114A /* ImageResources.bundle */,
+				7959ADE42281318F009F114A /* XLSlider.h */,
+				7959ADE52281318F009F114A /* XLSlider.m */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
 		9C886B8A1E78EC9F00F2CFD1 = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +115,15 @@
 		9C886B951E78EC9F00F2CFD1 /* demo-ios */ = {
 			isa = PBXGroup;
 			children = (
+				7959ADE62281318F009F114A /* Slider */,
+				7959ADE9228131F3009F114A /* XLVideoPlayer.h */,
+				7959ADEA228131F3009F114A /* XLVideoPlayer.m */,
 				9C886B991E78EC9F00F2CFD1 /* AppDelegate.h */,
 				9C886B9A1E78EC9F00F2CFD1 /* AppDelegate.m */,
 				9C886B9C1E78EC9F00F2CFD1 /* ViewController.h */,
 				9C886B9D1E78EC9F00F2CFD1 /* ViewController.m */,
+				7959ADED22817CA8009F114A /* AFNetworkReachabilityManager.h */,
+				7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */,
 				9C02F64E1E79293A00932489 /* PlayerViewController.h */,
 				9C02F64F1E79293A00932489 /* PlayerViewController.m */,
 				9C02F6501E79293A00932489 /* PlayerViewController.xib */,
@@ -168,8 +194,8 @@
 				TargetAttributes = {
 					9C886B921E78EC9F00F2CFD1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 46D9KM3A89;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 9A59CDXZH8;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -204,6 +230,7 @@
 			files = (
 				9C886BA61E78EC9F00F2CFD1 /* LaunchScreen.storyboard in Resources */,
 				9C886BA31E78EC9F00F2CFD1 /* Assets.xcassets in Resources */,
+				7959ADE8228131BA009F114A /* ImageResources.bundle in Resources */,
 				9C36DD461E79538500959FDA /* google-help-vr.mp4 in Resources */,
 				9C886BA11E78EC9F00F2CFD1 /* Main.storyboard in Resources */,
 				9C02F6521E79293A00932489 /* PlayerViewController.xib in Resources */,
@@ -218,7 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7959ADEC22813847009F114A /* XLSlider.m in Sources */,
 				9C886B9E1E78EC9F00F2CFD1 /* ViewController.m in Sources */,
+				7959ADEB228131F3009F114A /* XLVideoPlayer.m in Sources */,
+				7959ADEF22817CA9009F114A /* AFNetworkReachabilityManager.m in Sources */,
 				9C02F6511E79293A00932489 /* PlayerViewController.m in Sources */,
 				9C886B9B1E78EC9F00F2CFD1 /* AppDelegate.m in Sources */,
 				9C886B981E78EC9F00F2CFD1 /* main.m in Sources */,
@@ -351,12 +381,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46D9KM3A89;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9A59CDXZH8;
 				INFOPLIST_FILE = "demo-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yegail.SGPlayer-demo-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trs.SGPlayer-demo-ios";
 				PRODUCT_NAME = SGPlayer;
+				PROVISIONING_PROFILE_SPECIFIER = "TRS Mobile Wildcard GL Provision";
 			};
 			name = Debug;
 		};
@@ -364,12 +396,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46D9KM3A89;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9A59CDXZH8;
 				INFOPLIST_FILE = "demo-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yegail.SGPlayer-demo-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trs.SGPlayer-demo-ios";
 				PRODUCT_NAME = SGPlayer;
+				PROVISIONING_PROFILE_SPECIFIER = "TRS Mobile Wildcard GL Provision";
 			};
 			name = Release;
 		};

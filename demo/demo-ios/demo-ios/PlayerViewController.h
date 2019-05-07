@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, DemoType) {
     DemoType_AVPlayer_Normal = 0,
+    DemoType_AVPlayer_live,
     DemoType_AVPlayer_VR,
     DemoType_AVPlayer_VR_Box,
 };
