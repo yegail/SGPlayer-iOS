@@ -122,8 +122,8 @@
 		7946B6222282779200891B10 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
-				7946B6232282779200891B10 /* XLSlider.h */,
 				7946B6242282779200891B10 /* ImageResources.bundle */,
+				7946B6232282779200891B10 /* XLSlider.h */,
 				7946B6252282779200891B10 /* XLSlider.m */,
 			);
 			path = Slider;
@@ -381,6 +381,7 @@
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
 				);
 				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,6 +403,7 @@
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
 				);
 				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

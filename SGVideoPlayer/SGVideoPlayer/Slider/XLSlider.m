@@ -59,6 +59,8 @@ static CGFloat panDistance;
     CGPathRelease(minPath);
     
     CGMutablePathRef pointPath = CGPathCreateMutable();
+//    UIBezierPath *pointPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(panDistance, self.centerY - (self.sliderDiameter / 2), self.sliderDiameter, self.sliderDiameter) cornerRadius:self.sliderDiameter / 2];
+    
     CGPathAddEllipseInRect(pointPath, nil, CGRectMake(panDistance, self.centerY - (self.sliderDiameter / 2), self.sliderDiameter, self.sliderDiameter));
     CGContextSetFillColorWithColor(ctx, self.sliderColor.CGColor);
     CGContextAddPath(ctx, pointPath);
@@ -98,6 +100,7 @@ static CGFloat panDistance;
         _delegate.lineWidth = self.lineWidth;
         
         _lineLayer = [CALayer layer];
+        _lineLayer.shouldRasterize = YES;
         _lineLayer.delegate = _delegate;
         [self.layer addSublayer:_lineLayer];
         [_lineLayer setNeedsDisplay];

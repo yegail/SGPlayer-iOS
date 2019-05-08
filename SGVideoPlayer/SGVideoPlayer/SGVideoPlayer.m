@@ -12,7 +12,7 @@
 #import "AFNetworkReachabilityManager.h"
 
 static CGFloat const barAnimateSpeed = 0.5f;
-static CGFloat const barShowDuration = 5.0f;
+static CGFloat const barShowDuration = 2.5f;
 static CGFloat const opacity = 0.7f;
 static CGFloat const bottomBaHeight = 40.0f;
 static CGFloat const playBtnSideLength = 60.0f;
@@ -78,6 +78,7 @@ static CGFloat const playBtnSideLength = 60.0f;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(afNetworkingReachabilityDidChange:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
         
         self.barHiden = YES;
+        [self showOrHidenBar];
     }
     return self;
 }
