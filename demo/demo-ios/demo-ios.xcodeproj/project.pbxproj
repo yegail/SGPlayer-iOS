@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7959ADE8228131BA009F114A /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7959ADE7228131BA009F114A /* ImageResources.bundle */; };
+		7946B5EC2282735700891B10 /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7946B5EA2282735700891B10 /* ImageResources.bundle */; };
+		7946B5ED2282735700891B10 /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B5EB2282735700891B10 /* XLSlider.m */; };
+		7946B62F228277E700891B10 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B62E228277E700891B10 /* AFNetworkReachabilityManager.m */; };
+		7946B6552282829800891B10 /* SGPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B5F1228273E700891B10 /* SGPlatform.framework */; };
+		7946B6562282829800891B10 /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B5F3228273E700891B10 /* SGPlayer.framework */; };
 		7959ADEB228131F3009F114A /* XLVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADEA228131F3009F114A /* XLVideoPlayer.m */; };
-		7959ADEC22813847009F114A /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADE52281318F009F114A /* XLSlider.m */; };
-		7959ADEF22817CA9009F114A /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */; };
 		9C02F6511E79293A00932489 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F64F1E79293A00932489 /* PlayerViewController.m */; };
 		9C02F6521E79293A00932489 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C02F6501E79293A00932489 /* PlayerViewController.xib */; };
 		9C36DD461E79538500959FDA /* google-help-vr.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9C36DD441E79538500959FDA /* google-help-vr.mp4 */; };
@@ -27,18 +29,18 @@
 		9C886BBA1E78F13E00F2CFD1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C886BB91E78F13E00F2CFD1 /* libiconv.tbd */; };
 		9C886BBC1E78F14300F2CFD1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C886BBB1E78F14300F2CFD1 /* libz.tbd */; };
 		9C886BBE1E78F14700F2CFD1 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C886BBD1E78F14700F2CFD1 /* libbz2.tbd */; };
-		9CD96CCF21BA1EFA007971D7 /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9824A41FAB073B00142215 /* SGPlayer.framework */; };
-		9CD96CD121BA1F06007971D7 /* SGPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD96CD021BA1F06007971D7 /* SGPlatform.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7959ADE42281318F009F114A /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
-		7959ADE52281318F009F114A /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
-		7959ADE7228131BA009F114A /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		7946B5E92282735700891B10 /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		7946B5EA2282735700891B10 /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		7946B5EB2282735700891B10 /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		7946B5F1228273E700891B10 /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7946B5F3228273E700891B10 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7946B62D228277E700891B10 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		7946B62E228277E700891B10 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		7959ADE9228131F3009F114A /* XLVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoPlayer.h; sourceTree = "<group>"; };
 		7959ADEA228131F3009F114A /* XLVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoPlayer.m; sourceTree = "<group>"; };
-		7959ADED22817CA8009F114A /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		9C02F64E1E79293A00932489 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		9C02F64F1E79293A00932489 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		9C02F6501E79293A00932489 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
@@ -47,7 +49,6 @@
 		9C3DD16B1E8FBD420003B17A /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		9C3DD16D1E8FBD4A0003B17A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9C3DD16F1E8FBD4F0003B17A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		9C4032C41FAB1188005AEB36 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C886B931E78EC9F00F2CFD1 /* SGPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C886B971E78EC9F00F2CFD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C886B991E78EC9F00F2CFD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,9 +62,6 @@
 		9C886BB91E78F13E00F2CFD1 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		9C886BBB1E78F14300F2CFD1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9C886BBD1E78F14700F2CFD1 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		9C9824A41FAB073B00142215 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C9824AE1FAB10B100142215 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CD96CD021BA1F06007971D7 /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD96CD121BA1F06007971D7 /* SGPlatform.framework in Frameworks */,
-				9CD96CCF21BA1EFA007971D7 /* SGPlayer.framework in Frameworks */,
+				7946B6552282829800891B10 /* SGPlatform.framework in Frameworks */,
+				7946B6562282829800891B10 /* SGPlayer.framework in Frameworks */,
 				9C3DD1701E8FBD4F0003B17A /* CoreMedia.framework in Frameworks */,
 				9C3DD16E1E8FBD4A0003B17A /* AudioToolbox.framework in Frameworks */,
 				9C3DD16C1E8FBD420003B17A /* VideoToolbox.framework in Frameworks */,
@@ -85,14 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7959ADE62281318F009F114A /* Slider */ = {
+		7946B5E82282735700891B10 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
-				7959ADE7228131BA009F114A /* ImageResources.bundle */,
-				7959ADE42281318F009F114A /* XLSlider.h */,
-				7959ADE52281318F009F114A /* XLSlider.m */,
+				7946B5EA2282735700891B10 /* ImageResources.bundle */,
+				7946B5E92282735700891B10 /* XLSlider.h */,
+				7946B5EB2282735700891B10 /* XLSlider.m */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		7946B62C228277E700891B10 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7946B62D228277E700891B10 /* AFNetworkReachabilityManager.h */,
+				7946B62E228277E700891B10 /* AFNetworkReachabilityManager.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		9C886B8A1E78EC9F00F2CFD1 = {
@@ -115,15 +122,14 @@
 		9C886B951E78EC9F00F2CFD1 /* demo-ios */ = {
 			isa = PBXGroup;
 			children = (
-				7959ADE62281318F009F114A /* Slider */,
+				7946B62C228277E700891B10 /* Reachability */,
+				7946B5E82282735700891B10 /* Slider */,
 				7959ADE9228131F3009F114A /* XLVideoPlayer.h */,
 				7959ADEA228131F3009F114A /* XLVideoPlayer.m */,
 				9C886B991E78EC9F00F2CFD1 /* AppDelegate.h */,
 				9C886B9A1E78EC9F00F2CFD1 /* AppDelegate.m */,
 				9C886B9C1E78EC9F00F2CFD1 /* ViewController.h */,
 				9C886B9D1E78EC9F00F2CFD1 /* ViewController.m */,
-				7959ADED22817CA8009F114A /* AFNetworkReachabilityManager.h */,
-				7959ADEE22817CA9009F114A /* AFNetworkReachabilityManager.m */,
 				9C02F64E1E79293A00932489 /* PlayerViewController.h */,
 				9C02F64F1E79293A00932489 /* PlayerViewController.m */,
 				9C02F6501E79293A00932489 /* PlayerViewController.xib */,
@@ -149,10 +155,8 @@
 		9C886BAE1E78ECE500F2CFD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9CD96CD021BA1F06007971D7 /* SGPlatform.framework */,
-				9C4032C41FAB1188005AEB36 /* SGPlayer.framework */,
-				9C9824AE1FAB10B100142215 /* SGPlayer.framework */,
-				9C9824A41FAB073B00142215 /* SGPlayer.framework */,
+				7946B5F1228273E700891B10 /* SGPlatform.framework */,
+				7946B5F3228273E700891B10 /* SGPlayer.framework */,
 				9C3DD16F1E8FBD4F0003B17A /* CoreMedia.framework */,
 				9C3DD16D1E8FBD4A0003B17A /* AudioToolbox.framework */,
 				9C3DD16B1E8FBD420003B17A /* VideoToolbox.framework */,
@@ -189,8 +193,9 @@
 		9C886B8B1E78EC9F00F2CFD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SG;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = single;
+				ORGANIZATIONNAME = yegail;
 				TargetAttributes = {
 					9C886B921E78EC9F00F2CFD1 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -230,7 +235,7 @@
 			files = (
 				9C886BA61E78EC9F00F2CFD1 /* LaunchScreen.storyboard in Resources */,
 				9C886BA31E78EC9F00F2CFD1 /* Assets.xcassets in Resources */,
-				7959ADE8228131BA009F114A /* ImageResources.bundle in Resources */,
+				7946B5EC2282735700891B10 /* ImageResources.bundle in Resources */,
 				9C36DD461E79538500959FDA /* google-help-vr.mp4 in Resources */,
 				9C886BA11E78EC9F00F2CFD1 /* Main.storyboard in Resources */,
 				9C02F6521E79293A00932489 /* PlayerViewController.xib in Resources */,
@@ -245,12 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7959ADEC22813847009F114A /* XLSlider.m in Sources */,
 				9C886B9E1E78EC9F00F2CFD1 /* ViewController.m in Sources */,
 				7959ADEB228131F3009F114A /* XLVideoPlayer.m in Sources */,
-				7959ADEF22817CA9009F114A /* AFNetworkReachabilityManager.m in Sources */,
+				7946B5ED2282735700891B10 /* XLSlider.m in Sources */,
 				9C02F6511E79293A00932489 /* PlayerViewController.m in Sources */,
 				9C886B9B1E78EC9F00F2CFD1 /* AppDelegate.m in Sources */,
+				7946B62F228277E700891B10 /* AFNetworkReachabilityManager.m in Sources */,
 				9C886B981E78EC9F00F2CFD1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
