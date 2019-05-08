@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C478EBD1E712AA200AD4289 /* SGPLFColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAB1E712AA200AD4289 /* SGPLFColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EBE1E712AA200AD4289 /* SGPLFColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAB1E712AA200AD4289 /* SGPLFColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EBF1E712AA200AD4289 /* SGPLFColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAB1E712AA200AD4289 /* SGPLFColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EC01E712AA200AD4289 /* SGPLFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAC1E712AA200AD4289 /* SGPLFColor.m */; };
+		9C478EC11E712AA200AD4289 /* SGPLFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAC1E712AA200AD4289 /* SGPLFColor.m */; };
+		9C478EC21E712AA200AD4289 /* SGPLFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAC1E712AA200AD4289 /* SGPLFColor.m */; };
+		9C478EC31E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAD1E712AA200AD4289 /* SGPLFDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EC41E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAD1E712AA200AD4289 /* SGPLFDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EC51E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAD1E712AA200AD4289 /* SGPLFDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EC61E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAE1E712AA200AD4289 /* SGPLFDisplayLink.m */; };
+		9C478EC71E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAE1E712AA200AD4289 /* SGPLFDisplayLink.m */; };
+		9C478EC81E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EAE1E712AA200AD4289 /* SGPLFDisplayLink.m */; };
+		9C478EC91E712AA200AD4289 /* SGPLFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAF1E712AA200AD4289 /* SGPLFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ECA1E712AA200AD4289 /* SGPLFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAF1E712AA200AD4289 /* SGPLFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ECB1E712AA200AD4289 /* SGPLFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EAF1E712AA200AD4289 /* SGPLFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ECC1E712AA200AD4289 /* SGPLFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB01E712AA200AD4289 /* SGPLFImage.m */; };
+		9C478ECD1E712AA200AD4289 /* SGPLFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB01E712AA200AD4289 /* SGPLFImage.m */; };
+		9C478ECE1E712AA200AD4289 /* SGPLFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB01E712AA200AD4289 /* SGPLFImage.m */; };
+		9C478ECF1E712AA200AD4289 /* SGPLFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB11E712AA200AD4289 /* SGPLFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED01E712AA200AD4289 /* SGPLFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB11E712AA200AD4289 /* SGPLFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED11E712AA200AD4289 /* SGPLFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB11E712AA200AD4289 /* SGPLFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED21E712AA200AD4289 /* SGPLFScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB21E712AA200AD4289 /* SGPLFScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED31E712AA200AD4289 /* SGPLFScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB21E712AA200AD4289 /* SGPLFScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED41E712AA200AD4289 /* SGPLFScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB21E712AA200AD4289 /* SGPLFScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED51E712AA200AD4289 /* SGPLFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB31E712AA200AD4289 /* SGPLFScreen.m */; };
+		9C478ED61E712AA200AD4289 /* SGPLFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB31E712AA200AD4289 /* SGPLFScreen.m */; };
+		9C478ED71E712AA200AD4289 /* SGPLFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB31E712AA200AD4289 /* SGPLFScreen.m */; };
+		9C478ED81E712AA200AD4289 /* SGPLFView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB41E712AA200AD4289 /* SGPLFView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478ED91E712AA200AD4289 /* SGPLFView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB41E712AA200AD4289 /* SGPLFView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EDA1E712AA200AD4289 /* SGPLFView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB41E712AA200AD4289 /* SGPLFView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EDB1E712AA200AD4289 /* SGPLFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB51E712AA200AD4289 /* SGPLFView.m */; };
+		9C478EDC1E712AA200AD4289 /* SGPLFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB51E712AA200AD4289 /* SGPLFView.m */; };
+		9C478EDD1E712AA200AD4289 /* SGPLFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB51E712AA200AD4289 /* SGPLFView.m */; };
+		9C478EDE1E712AA200AD4289 /* SGPLFGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB71E712AA200AD4289 /* SGPLFGLContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EDF1E712AA200AD4289 /* SGPLFGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB71E712AA200AD4289 /* SGPLFGLContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EE01E712AA200AD4289 /* SGPLFGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB71E712AA200AD4289 /* SGPLFGLContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EE11E712AA200AD4289 /* SGPLFGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB81E712AA200AD4289 /* SGPLFGLContext.m */; };
+		9C478EE21E712AA200AD4289 /* SGPLFGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB81E712AA200AD4289 /* SGPLFGLContext.m */; };
+		9C478EE31E712AA200AD4289 /* SGPLFGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EB81E712AA200AD4289 /* SGPLFGLContext.m */; };
+		9C478EE41E712AA200AD4289 /* SGPLFGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB91E712AA200AD4289 /* SGPLFGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EE51E712AA200AD4289 /* SGPLFGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB91E712AA200AD4289 /* SGPLFGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EE61E712AA200AD4289 /* SGPLFGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EB91E712AA200AD4289 /* SGPLFGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EE71E712AA200AD4289 /* SGPLFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EBA1E712AA200AD4289 /* SGPLFGLView.m */; };
+		9C478EE81E712AA200AD4289 /* SGPLFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EBA1E712AA200AD4289 /* SGPLFGLView.m */; };
+		9C478EE91E712AA200AD4289 /* SGPLFGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C478EBA1E712AA200AD4289 /* SGPLFGLView.m */; };
+		9C478EEA1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBB1E712AA200AD4289 /* SGPLFOpenGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EEB1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBB1E712AA200AD4289 /* SGPLFOpenGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EEC1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBB1E712AA200AD4289 /* SGPLFOpenGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EED1E712AA200AD4289 /* SGPLFTargets.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBC1E712AA200AD4289 /* SGPLFTargets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EEE1E712AA200AD4289 /* SGPLFTargets.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBC1E712AA200AD4289 /* SGPLFTargets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C478EEF1E712AA200AD4289 /* SGPLFTargets.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C478EBC1E712AA200AD4289 /* SGPLFTargets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CEFA63B1E7106B500835CAB /* SGPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEFA6391E7106B500835CAB /* SGPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CEFA6451E71071800835CAB /* SGPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEFA6391E7106B500835CAB /* SGPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CEFA6501E71073700835CAB /* SGPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEFA6391E7106B500835CAB /* SGPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF556091E8B4671006DD339 /* SGPLFGLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF556071E8B4671006DD339 /* SGPLFGLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF5560A1E8B4671006DD339 /* SGPLFGLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF556071E8B4671006DD339 /* SGPLFGLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF5560B1E8B4671006DD339 /* SGPLFGLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF556071E8B4671006DD339 /* SGPLFGLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF5560C1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF556081E8B4671006DD339 /* SGPLFGLViewController.m */; };
+		9CF5560D1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF556081E8B4671006DD339 /* SGPLFGLViewController.m */; };
+		9CF5560E1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF556081E8B4671006DD339 /* SGPLFGLViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9C478EAB1E712AA200AD4289 /* SGPLFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFColor.h; sourceTree = "<group>"; };
+		9C478EAC1E712AA200AD4289 /* SGPLFColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFColor.m; sourceTree = "<group>"; };
+		9C478EAD1E712AA200AD4289 /* SGPLFDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFDisplayLink.h; sourceTree = "<group>"; };
+		9C478EAE1E712AA200AD4289 /* SGPLFDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFDisplayLink.m; sourceTree = "<group>"; };
+		9C478EAF1E712AA200AD4289 /* SGPLFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFImage.h; sourceTree = "<group>"; };
+		9C478EB01E712AA200AD4289 /* SGPLFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFImage.m; sourceTree = "<group>"; };
+		9C478EB11E712AA200AD4289 /* SGPLFObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFObject.h; sourceTree = "<group>"; };
+		9C478EB21E712AA200AD4289 /* SGPLFScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFScreen.h; sourceTree = "<group>"; };
+		9C478EB31E712AA200AD4289 /* SGPLFScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFScreen.m; sourceTree = "<group>"; };
+		9C478EB41E712AA200AD4289 /* SGPLFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFView.h; sourceTree = "<group>"; };
+		9C478EB51E712AA200AD4289 /* SGPLFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFView.m; sourceTree = "<group>"; };
+		9C478EB71E712AA200AD4289 /* SGPLFGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFGLContext.h; sourceTree = "<group>"; };
+		9C478EB81E712AA200AD4289 /* SGPLFGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFGLContext.m; sourceTree = "<group>"; };
+		9C478EB91E712AA200AD4289 /* SGPLFGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFGLView.h; sourceTree = "<group>"; };
+		9C478EBA1E712AA200AD4289 /* SGPLFGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFGLView.m; sourceTree = "<group>"; };
+		9C478EBB1E712AA200AD4289 /* SGPLFOpenGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFOpenGL.h; sourceTree = "<group>"; };
+		9C478EBC1E712AA200AD4289 /* SGPLFTargets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFTargets.h; sourceTree = "<group>"; };
+		9CEFA6361E7106B500835CAB /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CEFA6391E7106B500835CAB /* SGPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGPlatform.h; sourceTree = "<group>"; };
+		9CEFA63A1E7106B500835CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CEFA64A1E71071800835CAB /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CEFA6551E71073700835CAB /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF556071E8B4671006DD339 /* SGPLFGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFGLViewController.h; sourceTree = "<group>"; };
+		9CF556081E8B4671006DD339 /* SGPLFGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFGLViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CEFA6321E7106B500835CAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA6431E71071800835CAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA64E1E71073700835CAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C478EA91E712AA200AD4289 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9C478EBC1E712AA200AD4289 /* SGPLFTargets.h */,
+				9C478EAA1E712AA200AD4289 /* SGPLFObject */,
+				9C478EB61E712AA200AD4289 /* SGPLFOpenGL */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9C478EAA1E712AA200AD4289 /* SGPLFObject */ = {
+			isa = PBXGroup;
+			children = (
+				9C478EB11E712AA200AD4289 /* SGPLFObject.h */,
+				9C478EB41E712AA200AD4289 /* SGPLFView.h */,
+				9C478EB51E712AA200AD4289 /* SGPLFView.m */,
+				9C478EAF1E712AA200AD4289 /* SGPLFImage.h */,
+				9C478EB01E712AA200AD4289 /* SGPLFImage.m */,
+				9C478EAB1E712AA200AD4289 /* SGPLFColor.h */,
+				9C478EAC1E712AA200AD4289 /* SGPLFColor.m */,
+				9C478EB21E712AA200AD4289 /* SGPLFScreen.h */,
+				9C478EB31E712AA200AD4289 /* SGPLFScreen.m */,
+				9C478EAD1E712AA200AD4289 /* SGPLFDisplayLink.h */,
+				9C478EAE1E712AA200AD4289 /* SGPLFDisplayLink.m */,
+			);
+			path = SGPLFObject;
+			sourceTree = "<group>";
+		};
+		9C478EB61E712AA200AD4289 /* SGPLFOpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				9C478EBB1E712AA200AD4289 /* SGPLFOpenGL.h */,
+				9C478EB91E712AA200AD4289 /* SGPLFGLView.h */,
+				9C478EBA1E712AA200AD4289 /* SGPLFGLView.m */,
+				9C478EB71E712AA200AD4289 /* SGPLFGLContext.h */,
+				9C478EB81E712AA200AD4289 /* SGPLFGLContext.m */,
+				9CF556071E8B4671006DD339 /* SGPLFGLViewController.h */,
+				9CF556081E8B4671006DD339 /* SGPLFGLViewController.m */,
+			);
+			path = SGPLFOpenGL;
+			sourceTree = "<group>";
+		};
+		9CEFA62C1E7106B500835CAB = {
+			isa = PBXGroup;
+			children = (
+				9CEFA6381E7106B500835CAB /* SGPlatform */,
+				9CEFA6371E7106B500835CAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CEFA6371E7106B500835CAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFA6361E7106B500835CAB /* SGPlatform.framework */,
+				9CEFA64A1E71071800835CAB /* SGPlatform.framework */,
+				9CEFA6551E71073700835CAB /* SGPlatform.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CEFA6381E7106B500835CAB /* SGPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFA6391E7106B500835CAB /* SGPlatform.h */,
+				9CEFA63A1E7106B500835CAB /* Info.plist */,
+				9C478EA91E712AA200AD4289 /* Classes */,
+			);
+			path = SGPlatform;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9CEFA6331E7106B500835CAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF556091E8B4671006DD339 /* SGPLFGLViewController.h in Headers */,
+				9C478EED1E712AA200AD4289 /* SGPLFTargets.h in Headers */,
+				9C478EC91E712AA200AD4289 /* SGPLFImage.h in Headers */,
+				9C478EEA1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */,
+				9C478EDE1E712AA200AD4289 /* SGPLFGLContext.h in Headers */,
+				9C478ECF1E712AA200AD4289 /* SGPLFObject.h in Headers */,
+				9C478EC31E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */,
+				9C478EE41E712AA200AD4289 /* SGPLFGLView.h in Headers */,
+				9C478EBD1E712AA200AD4289 /* SGPLFColor.h in Headers */,
+				9C478ED81E712AA200AD4289 /* SGPLFView.h in Headers */,
+				9C478ED21E712AA200AD4289 /* SGPLFScreen.h in Headers */,
+				9CEFA63B1E7106B500835CAB /* SGPlatform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA6441E71071800835CAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5560A1E8B4671006DD339 /* SGPLFGLViewController.h in Headers */,
+				9C478EEE1E712AA200AD4289 /* SGPLFTargets.h in Headers */,
+				9C478ECA1E712AA200AD4289 /* SGPLFImage.h in Headers */,
+				9C478EEB1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */,
+				9C478EDF1E712AA200AD4289 /* SGPLFGLContext.h in Headers */,
+				9C478ED01E712AA200AD4289 /* SGPLFObject.h in Headers */,
+				9C478EC41E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */,
+				9C478EE51E712AA200AD4289 /* SGPLFGLView.h in Headers */,
+				9C478EBE1E712AA200AD4289 /* SGPLFColor.h in Headers */,
+				9C478ED91E712AA200AD4289 /* SGPLFView.h in Headers */,
+				9C478ED31E712AA200AD4289 /* SGPLFScreen.h in Headers */,
+				9CEFA6451E71071800835CAB /* SGPlatform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA64F1E71073700835CAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5560B1E8B4671006DD339 /* SGPLFGLViewController.h in Headers */,
+				9C478EEF1E712AA200AD4289 /* SGPLFTargets.h in Headers */,
+				9C478ECB1E712AA200AD4289 /* SGPLFImage.h in Headers */,
+				9C478EEC1E712AA200AD4289 /* SGPLFOpenGL.h in Headers */,
+				9C478EE01E712AA200AD4289 /* SGPLFGLContext.h in Headers */,
+				9C478ED11E712AA200AD4289 /* SGPLFObject.h in Headers */,
+				9C478EC51E712AA200AD4289 /* SGPLFDisplayLink.h in Headers */,
+				9C478EE61E712AA200AD4289 /* SGPLFGLView.h in Headers */,
+				9C478EBF1E712AA200AD4289 /* SGPLFColor.h in Headers */,
+				9C478EDA1E712AA200AD4289 /* SGPLFView.h in Headers */,
+				9C478ED41E712AA200AD4289 /* SGPLFScreen.h in Headers */,
+				9CEFA6501E71073700835CAB /* SGPlatform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9CEFA6351E7106B500835CAB /* SGPlatform iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CEFA63E1E7106B500835CAB /* Build configuration list for PBXNativeTarget "SGPlatform iOS" */;
+			buildPhases = (
+				9CEFA6311E7106B500835CAB /* Sources */,
+				9CEFA6321E7106B500835CAB /* Frameworks */,
+				9CEFA6331E7106B500835CAB /* Headers */,
+				9CEFA6341E7106B500835CAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SGPlatform iOS";
+			productName = SGPlatform;
+			productReference = 9CEFA6361E7106B500835CAB /* SGPlatform.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9CEFA6411E71071800835CAB /* SGPlatform macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CEFA6471E71071800835CAB /* Build configuration list for PBXNativeTarget "SGPlatform macOS" */;
+			buildPhases = (
+				9CEFA6421E71071800835CAB /* Sources */,
+				9CEFA6431E71071800835CAB /* Frameworks */,
+				9CEFA6441E71071800835CAB /* Headers */,
+				9CEFA6461E71071800835CAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SGPlatform macOS";
+			productName = SGPlatform;
+			productReference = 9CEFA64A1E71071800835CAB /* SGPlatform.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9CEFA64C1E71073700835CAB /* SGPlatform tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CEFA6521E71073700835CAB /* Build configuration list for PBXNativeTarget "SGPlatform tvOS" */;
+			buildPhases = (
+				9CEFA64D1E71073700835CAB /* Sources */,
+				9CEFA64E1E71073700835CAB /* Frameworks */,
+				9CEFA64F1E71073700835CAB /* Headers */,
+				9CEFA6511E71073700835CAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SGPlatform tvOS";
+			productName = SGPlatform;
+			productReference = 9CEFA6551E71073700835CAB /* SGPlatform.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CEFA62D1E7106B500835CAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = single;
+				TargetAttributes = {
+					9CEFA6351E7106B500835CAB = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					9CEFA6411E71071800835CAB = {
+						ProvisioningStyle = Automatic;
+					};
+					9CEFA64C1E71073700835CAB = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9CEFA6301E7106B500835CAB /* Build configuration list for PBXProject "SGPlatform" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9CEFA62C1E7106B500835CAB;
+			productRefGroup = 9CEFA6371E7106B500835CAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CEFA6351E7106B500835CAB /* SGPlatform iOS */,
+				9CEFA6411E71071800835CAB /* SGPlatform macOS */,
+				9CEFA64C1E71073700835CAB /* SGPlatform tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CEFA6341E7106B500835CAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA6461E71071800835CAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA6511E71073700835CAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CEFA6311E7106B500835CAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5560C1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */,
+				9C478EDB1E712AA200AD4289 /* SGPLFView.m in Sources */,
+				9C478EE71E712AA200AD4289 /* SGPLFGLView.m in Sources */,
+				9C478ED51E712AA200AD4289 /* SGPLFScreen.m in Sources */,
+				9C478ECC1E712AA200AD4289 /* SGPLFImage.m in Sources */,
+				9C478EE11E712AA200AD4289 /* SGPLFGLContext.m in Sources */,
+				9C478EC01E712AA200AD4289 /* SGPLFColor.m in Sources */,
+				9C478EC61E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA6421E71071800835CAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5560D1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */,
+				9C478EDC1E712AA200AD4289 /* SGPLFView.m in Sources */,
+				9C478EE81E712AA200AD4289 /* SGPLFGLView.m in Sources */,
+				9C478ED61E712AA200AD4289 /* SGPLFScreen.m in Sources */,
+				9C478ECD1E712AA200AD4289 /* SGPLFImage.m in Sources */,
+				9C478EE21E712AA200AD4289 /* SGPLFGLContext.m in Sources */,
+				9C478EC11E712AA200AD4289 /* SGPLFColor.m in Sources */,
+				9C478EC71E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEFA64D1E71073700835CAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5560E1E8B4671006DD339 /* SGPLFGLViewController.m in Sources */,
+				9C478EDD1E712AA200AD4289 /* SGPLFView.m in Sources */,
+				9C478EE91E712AA200AD4289 /* SGPLFGLView.m in Sources */,
+				9C478ED71E712AA200AD4289 /* SGPLFScreen.m in Sources */,
+				9C478ECE1E712AA200AD4289 /* SGPLFImage.m in Sources */,
+				9C478EE31E712AA200AD4289 /* SGPLFGLContext.m in Sources */,
+				9C478EC21E712AA200AD4289 /* SGPLFColor.m in Sources */,
+				9C478EC81E712AA200AD4289 /* SGPLFDisplayLink.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9CEFA63C1E7106B500835CAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9CEFA63D1E7106B500835CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9CEFA63F1E7106B500835CAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CEFA6401E7106B500835CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9CEFA6481E71071800835CAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9CEFA6491E71071800835CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9CEFA6531E71073700835CAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		9CEFA6541E71073700835CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SGPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.single.SGPlatform;
+				PRODUCT_NAME = SGPlatform;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CEFA6301E7106B500835CAB /* Build configuration list for PBXProject "SGPlatform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CEFA63C1E7106B500835CAB /* Debug */,
+				9CEFA63D1E7106B500835CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CEFA63E1E7106B500835CAB /* Build configuration list for PBXNativeTarget "SGPlatform iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CEFA63F1E7106B500835CAB /* Debug */,
+				9CEFA6401E7106B500835CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CEFA6471E71071800835CAB /* Build configuration list for PBXNativeTarget "SGPlatform macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CEFA6481E71071800835CAB /* Debug */,
+				9CEFA6491E71071800835CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CEFA6521E71073700835CAB /* Build configuration list for PBXNativeTarget "SGPlatform tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CEFA6531E71073700835CAB /* Debug */,
+				9CEFA6541E71073700835CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CEFA62D1E7106B500835CAB /* Project object */;
+}
