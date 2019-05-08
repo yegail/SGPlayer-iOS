@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7946B6052282752700891B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6042282752700891B10 /* AppDelegate.m */; };
+		7946B6082282752700891B10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6072282752700891B10 /* ViewController.m */; };
+		7946B60B2282752700891B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7946B6092282752700891B10 /* Main.storyboard */; };
+		7946B60D2282752900891B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7946B60C2282752900891B10 /* Assets.xcassets */; };
+		7946B6102282752900891B10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7946B60E2282752900891B10 /* LaunchScreen.storyboard */; };
+		7946B6132282752900891B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6122282752900891B10 /* main.m */; };
+		7946B6212282773500891B10 /* SGVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6202282773500891B10 /* SGVideoPlayer.m */; };
+		7946B6262282779200891B10 /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7946B6242282779200891B10 /* ImageResources.bundle */; };
+		7946B6272282779200891B10 /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6252282779200891B10 /* XLSlider.m */; };
+		7946B62B228277C900891B10 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B62A228277C800891B10 /* AFNetworkReachabilityManager.m */; };
+		7946B632228279A300891B10 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B630228279A200891B10 /* PlayerViewController.m */; };
+		7946B63A22827D1200891B10 /* google-help-vr.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63822827D1100891B10 /* google-help-vr.mp4 */; };
+		7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63922827D1100891B10 /* i-see-fire.mp4 */; };
+		7946B66B2282885C00891B10 /* SGPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B66A2282885C00891B10 /* SGPlatform.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7946B66D2282885C00891B10 /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B66C2282885C00891B10 /* SGPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7946B6002282752700891B10 /* SGVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7946B6032282752700891B10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7946B6042282752700891B10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7946B6062282752700891B10 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7946B6072282752700891B10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7946B60A2282752700891B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7946B60C2282752900891B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7946B60F2282752900891B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7946B6112282752900891B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7946B6122282752900891B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7946B61F2282773500891B10 /* SGVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGVideoPlayer.h; sourceTree = "<group>"; };
+		7946B6202282773500891B10 /* SGVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGVideoPlayer.m; sourceTree = "<group>"; };
+		7946B6232282779200891B10 /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		7946B6242282779200891B10 /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		7946B6252282779200891B10 /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		7946B629228277C800891B10 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		7946B62A228277C800891B10 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		7946B630228279A200891B10 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		7946B631228279A300891B10 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		7946B63822827D1100891B10 /* google-help-vr.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "google-help-vr.mp4"; sourceTree = "<group>"; };
+		7946B63922827D1100891B10 /* i-see-fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "i-see-fire.mp4"; sourceTree = "<group>"; };
+		7946B66A2282885C00891B10 /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7946B66C2282885C00891B10 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7946B5FD2282752700891B10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7946B66B2282885C00891B10 /* SGPlatform.framework in Frameworks */,
+				7946B66D2282885C00891B10 /* SGPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7946B5F72282752700891B10 = {
+			isa = PBXGroup;
+			children = (
+				7946B6022282752700891B10 /* SGVideoPlayer */,
+				7946B6012282752700891B10 /* Products */,
+				7946B619228275A600891B10 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7946B6012282752700891B10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7946B6002282752700891B10 /* SGVideoPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7946B6022282752700891B10 /* SGVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7946B628228277C800891B10 /* Reachability */,
+				7946B61E2282773500891B10 /* SGVideoPlayer */,
+				7946B6032282752700891B10 /* AppDelegate.h */,
+				7946B6042282752700891B10 /* AppDelegate.m */,
+				7946B6062282752700891B10 /* ViewController.h */,
+				7946B6072282752700891B10 /* ViewController.m */,
+				7946B631228279A300891B10 /* PlayerViewController.h */,
+				7946B630228279A200891B10 /* PlayerViewController.m */,
+				7946B6092282752700891B10 /* Main.storyboard */,
+				7946B60C2282752900891B10 /* Assets.xcassets */,
+				7946B60E2282752900891B10 /* LaunchScreen.storyboard */,
+				7946B6112282752900891B10 /* Info.plist */,
+				7946B63722827BC400891B10 /* Supporting Files */,
+			);
+			path = SGVideoPlayer;
+			sourceTree = "<group>";
+		};
+		7946B619228275A600891B10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7946B66A2282885C00891B10 /* SGPlatform.framework */,
+				7946B66C2282885C00891B10 /* SGPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7946B61E2282773500891B10 /* SGVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7946B6222282779200891B10 /* Slider */,
+				7946B61F2282773500891B10 /* SGVideoPlayer.h */,
+				7946B6202282773500891B10 /* SGVideoPlayer.m */,
+			);
+			path = SGVideoPlayer;
+			sourceTree = "<group>";
+		};
+		7946B6222282779200891B10 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				7946B6232282779200891B10 /* XLSlider.h */,
+				7946B6242282779200891B10 /* ImageResources.bundle */,
+				7946B6252282779200891B10 /* XLSlider.m */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		7946B628228277C800891B10 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7946B629228277C800891B10 /* AFNetworkReachabilityManager.h */,
+				7946B62A228277C800891B10 /* AFNetworkReachabilityManager.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		7946B63722827BC400891B10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7946B63822827D1100891B10 /* google-help-vr.mp4 */,
+				7946B63922827D1100891B10 /* i-see-fire.mp4 */,
+				7946B6122282752900891B10 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7946B5FF2282752700891B10 /* SGVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7946B6162282752900891B10 /* Build configuration list for PBXNativeTarget "SGVideoPlayer" */;
+			buildPhases = (
+				7946B5FC2282752700891B10 /* Sources */,
+				7946B5FD2282752700891B10 /* Frameworks */,
+				7946B5FE2282752700891B10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SGVideoPlayer;
+			productName = SGVideoPlayer;
+			productReference = 7946B6002282752700891B10 /* SGVideoPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7946B5F82282752700891B10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = yegail;
+				TargetAttributes = {
+					7946B5FF2282752700891B10 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 7946B5FB2282752700891B10 /* Build configuration list for PBXProject "SGVideoPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7946B5F72282752700891B10;
+			productRefGroup = 7946B6012282752700891B10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7946B5FF2282752700891B10 /* SGVideoPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7946B5FE2282752700891B10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7946B6102282752900891B10 /* LaunchScreen.storyboard in Resources */,
+				7946B60D2282752900891B10 /* Assets.xcassets in Resources */,
+				7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */,
+				7946B60B2282752700891B10 /* Main.storyboard in Resources */,
+				7946B6262282779200891B10 /* ImageResources.bundle in Resources */,
+				7946B63A22827D1200891B10 /* google-help-vr.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7946B5FC2282752700891B10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7946B632228279A300891B10 /* PlayerViewController.m in Sources */,
+				7946B6212282773500891B10 /* SGVideoPlayer.m in Sources */,
+				7946B6082282752700891B10 /* ViewController.m in Sources */,
+				7946B6272282779200891B10 /* XLSlider.m in Sources */,
+				7946B6132282752900891B10 /* main.m in Sources */,
+				7946B62B228277C900891B10 /* AFNetworkReachabilityManager.m in Sources */,
+				7946B6052282752700891B10 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7946B6092282752700891B10 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7946B60A2282752700891B10 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7946B60E2282752900891B10 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7946B60F2282752900891B10 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7946B6142282752900891B10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7946B6152282752900891B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7946B6172282752900891B10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46D9KM3A89;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
+				);
+				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yegail.SGVideoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7946B6182282752900891B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46D9KM3A89;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
+				);
+				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yegail.SGVideoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7946B5FB2282752700891B10 /* Build configuration list for PBXProject "SGVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7946B6142282752900891B10 /* Debug */,
+				7946B6152282752900891B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7946B6162282752900891B10 /* Build configuration list for PBXNativeTarget "SGVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7946B6172282752900891B10 /* Debug */,
+				7946B6182282752900891B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7946B5F82282752700891B10 /* Project object */;
+}
