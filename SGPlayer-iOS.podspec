@@ -17,10 +17,11 @@ Pod::Spec.new do |spec|
 
   #spec.exclude_files = "Classes/Exclude"
 
-  spec.source_files  = "SGPlayer/SGPlayer/Classes",
-		       "SGPlayer/SGPlayer/Classes/**/*.{h,m}",
+  spec.source_files  = ["SGPlayer/SGPlayer/Classes", "SGPlayer/SGPlayer/Classes/**/*.{h,m}"]
 
-  #spec.module_map    = 'SGPlayer/Classes/Extension/SGAVPlayer/module.modulemap'
+  #spec.module_map   = 'SGPlayer/Classes/Extension/SGAVPlayer/module.modulemap'
+  
+  spec.frameworks    = 'AudioToolbox', 'VideoToolBox', 'CoreMedia'
 
 
 

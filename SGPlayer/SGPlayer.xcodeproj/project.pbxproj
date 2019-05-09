@@ -56,8 +56,6 @@
 		7946B5B822826AA700891B10 /* SGPlayerTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7946B57D22826AA700891B10 /* SGPlayerTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7946B5B922826AA700891B10 /* SGPlayerImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B57E22826AA700891B10 /* SGPlayerImp.m */; };
 		7946B5BB22826AA700891B10 /* SGPlayerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B58022826AA700891B10 /* SGPlayerAction.m */; };
-		7946B5D922826FB900891B10 /* SGAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B5D122826FB800891B10 /* SGAudioManager.m */; };
-		7946B5DD22826FB900891B10 /* SGAudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7946B5D522826FB800891B10 /* SGAudioManager.h */; };
 		7992D5672283BC0C00D7208B /* SGPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7992D5662283BC0B00D7208B /* SGPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7992D5AA2283BE9200D7208B /* SGPLFGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7992D5952283BE9100D7208B /* SGPLFGLViewController.m */; };
 		7992D5AB2283BE9200D7208B /* SGPLFGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7992D5962283BE9100D7208B /* SGPLFGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,6 +77,12 @@
 		7992D5BB2283BE9200D7208B /* SGPLFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7992D5A72283BE9200D7208B /* SGPLFScreen.m */; };
 		7992D5BC2283BE9200D7208B /* SGPLFDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7992D5A82283BE9200D7208B /* SGPLFDisplayLink.m */; };
 		79963F222283C3680097746D /* SGPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 7992D5A92283BE9200D7208B /* SGPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79963F242283DA810097746D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F232283DA810097746D /* AudioToolbox.framework */; };
+		79963F262283DB390097746D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F252283DB390097746D /* CoreMedia.framework */; };
+		79963F282283DB400097746D /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F272283DB400097746D /* VideoToolbox.framework */; };
+		79963F2A2283DB460097746D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F292283DB460097746D /* libiconv.tbd */; };
+		79963F2C2283DB4C0097746D /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F2B2283DB4C0097746D /* libbz2.tbd */; };
+		79963F2E2283DB500097746D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79963F2D2283DB500097746D /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,12 +136,6 @@
 		7946B57D22826AA700891B10 /* SGPlayerTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPlayerTrack.h; sourceTree = "<group>"; };
 		7946B57E22826AA700891B10 /* SGPlayerImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPlayerImp.m; sourceTree = "<group>"; };
 		7946B58022826AA700891B10 /* SGPlayerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPlayerAction.m; sourceTree = "<group>"; };
-		7946B5D022826FB800891B10 /* SGMacAudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMacAudioDevice.h; sourceTree = "<group>"; };
-		7946B5D122826FB800891B10 /* SGAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAudioManager.m; sourceTree = "<group>"; };
-		7946B5D322826FB800891B10 /* SGMacAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMacAudioSession.h; sourceTree = "<group>"; };
-		7946B5D422826FB800891B10 /* SGMacAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMacAudioSession.m; sourceTree = "<group>"; };
-		7946B5D522826FB800891B10 /* SGAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAudioManager.h; sourceTree = "<group>"; };
-		7946B5D622826FB900891B10 /* SGMacAudioDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMacAudioDevice.m; sourceTree = "<group>"; };
 		7992D5662283BC0B00D7208B /* SGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPlayer.h; sourceTree = "<group>"; };
 		7992D5952283BE9100D7208B /* SGPLFGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFGLViewController.m; sourceTree = "<group>"; };
 		7992D5962283BE9100D7208B /* SGPLFGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPLFGLView.h; sourceTree = "<group>"; };
@@ -159,33 +157,12 @@
 		7992D5A72283BE9200D7208B /* SGPLFScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFScreen.m; sourceTree = "<group>"; };
 		7992D5A82283BE9200D7208B /* SGPLFDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPLFDisplayLink.m; sourceTree = "<group>"; };
 		7992D5A92283BE9200D7208B /* SGPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPlatform.h; sourceTree = "<group>"; };
-		9C4793431E71402E00AD4289 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libavcodec.a"; sourceTree = "<group>"; };
-		9C4793441E71402E00AD4289 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libavdevice.a"; sourceTree = "<group>"; };
-		9C4793451E71402E00AD4289 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libavfilter.a"; sourceTree = "<group>"; };
-		9C4793461E71402E00AD4289 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libavformat.a"; sourceTree = "<group>"; };
-		9C4793471E71402E00AD4289 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libavutil.a"; sourceTree = "<group>"; };
-		9C4793481E71402E00AD4289 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libcrypto.a"; sourceTree = "<group>"; };
-		9C4793491E71402E00AD4289 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libssl.a"; sourceTree = "<group>"; };
-		9C47934A1E71402E00AD4289 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libswresample.a"; sourceTree = "<group>"; };
-		9C47934B1E71402E00AD4289 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS/libswscale.a"; sourceTree = "<group>"; };
-		9C4793551E71403500AD4289 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libavcodec.a"; sourceTree = "<group>"; };
-		9C4793561E71403500AD4289 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libavdevice.a"; sourceTree = "<group>"; };
-		9C4793571E71403500AD4289 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libavfilter.a"; sourceTree = "<group>"; };
-		9C4793581E71403500AD4289 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libavformat.a"; sourceTree = "<group>"; };
-		9C4793591E71403500AD4289 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libavutil.a"; sourceTree = "<group>"; };
-		9C47935A1E71403500AD4289 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libcrypto.a"; sourceTree = "<group>"; };
-		9C47935B1E71403500AD4289 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libssl.a"; sourceTree = "<group>"; };
-		9C47935C1E71403500AD4289 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libswresample.a"; sourceTree = "<group>"; };
-		9C47935D1E71403500AD4289 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-macOS/libswscale.a"; sourceTree = "<group>"; };
-		9C4793671E71404A00AD4289 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libavcodec.a"; sourceTree = "<group>"; };
-		9C4793681E71404A00AD4289 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libavdevice.a"; sourceTree = "<group>"; };
-		9C4793691E71404A00AD4289 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libavfilter.a"; sourceTree = "<group>"; };
-		9C47936A1E71404A00AD4289 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libavformat.a"; sourceTree = "<group>"; };
-		9C47936B1E71404A00AD4289 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libavutil.a"; sourceTree = "<group>"; };
-		9C47936C1E71404A00AD4289 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libcrypto.a"; sourceTree = "<group>"; };
-		9C47936D1E71404A00AD4289 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libssl.a"; sourceTree = "<group>"; };
-		9C47936E1E71404A00AD4289 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libswresample.a"; sourceTree = "<group>"; };
-		9C47936F1E71404A00AD4289 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = "SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-tvOS/libswscale.a"; sourceTree = "<group>"; };
+		79963F232283DA810097746D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		79963F252283DB390097746D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		79963F272283DB400097746D /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		79963F292283DB460097746D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		79963F2B2283DB4C0097746D /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		79963F2D2283DB500097746D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		9CEFA6D61E7122BF00835CAB /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +171,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79963F2E2283DB500097746D /* libz.tbd in Frameworks */,
+				79963F2C2283DB4C0097746D /* libbz2.tbd in Frameworks */,
+				79963F2A2283DB460097746D /* libiconv.tbd in Frameworks */,
+				79963F282283DB400097746D /* VideoToolbox.framework in Frameworks */,
+				79963F262283DB390097746D /* CoreMedia.framework in Frameworks */,
+				79963F242283DA810097746D /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +213,6 @@
 				7946B56122826AA700891B10 /* SGDistortion */,
 				7946B56F22826AA700891B10 /* SGMatrix */,
 				7946B56822826AA700891B10 /* SGTools */,
-				7946B5CF22826F7000891B10 /* SGAudio */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -340,19 +322,6 @@
 			path = SGAVPlayer;
 			sourceTree = "<group>";
 		};
-		7946B5CF22826F7000891B10 /* SGAudio */ = {
-			isa = PBXGroup;
-			children = (
-				7946B5D522826FB800891B10 /* SGAudioManager.h */,
-				7946B5D122826FB800891B10 /* SGAudioManager.m */,
-				7946B5D022826FB800891B10 /* SGMacAudioDevice.h */,
-				7946B5D622826FB900891B10 /* SGMacAudioDevice.m */,
-				7946B5D322826FB800891B10 /* SGMacAudioSession.h */,
-				7946B5D422826FB800891B10 /* SGMacAudioSession.m */,
-			);
-			path = SGAudio;
-			sourceTree = "<group>";
-		};
 		7992D5932283BE9100D7208B /* SGPlatform */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,33 +368,12 @@
 		9C4793421E71402E00AD4289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C4793671E71404A00AD4289 /* libavcodec.a */,
-				9C4793681E71404A00AD4289 /* libavdevice.a */,
-				9C4793691E71404A00AD4289 /* libavfilter.a */,
-				9C47936A1E71404A00AD4289 /* libavformat.a */,
-				9C47936B1E71404A00AD4289 /* libavutil.a */,
-				9C47936C1E71404A00AD4289 /* libcrypto.a */,
-				9C47936D1E71404A00AD4289 /* libssl.a */,
-				9C47936E1E71404A00AD4289 /* libswresample.a */,
-				9C47936F1E71404A00AD4289 /* libswscale.a */,
-				9C4793551E71403500AD4289 /* libavcodec.a */,
-				9C4793561E71403500AD4289 /* libavdevice.a */,
-				9C4793571E71403500AD4289 /* libavfilter.a */,
-				9C4793581E71403500AD4289 /* libavformat.a */,
-				9C4793591E71403500AD4289 /* libavutil.a */,
-				9C47935A1E71403500AD4289 /* libcrypto.a */,
-				9C47935B1E71403500AD4289 /* libssl.a */,
-				9C47935C1E71403500AD4289 /* libswresample.a */,
-				9C47935D1E71403500AD4289 /* libswscale.a */,
-				9C4793431E71402E00AD4289 /* libavcodec.a */,
-				9C4793441E71402E00AD4289 /* libavdevice.a */,
-				9C4793451E71402E00AD4289 /* libavfilter.a */,
-				9C4793461E71402E00AD4289 /* libavformat.a */,
-				9C4793471E71402E00AD4289 /* libavutil.a */,
-				9C4793481E71402E00AD4289 /* libcrypto.a */,
-				9C4793491E71402E00AD4289 /* libssl.a */,
-				9C47934A1E71402E00AD4289 /* libswresample.a */,
-				9C47934B1E71402E00AD4289 /* libswscale.a */,
+				79963F2D2283DB500097746D /* libz.tbd */,
+				79963F2B2283DB4C0097746D /* libbz2.tbd */,
+				79963F292283DB460097746D /* libiconv.tbd */,
+				79963F272283DB400097746D /* VideoToolbox.framework */,
+				79963F252283DB390097746D /* CoreMedia.framework */,
+				79963F232283DA810097746D /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -489,7 +437,6 @@
 				7946B5B122826AA700891B10 /* SGFingerRotation.h in Headers */,
 				7946B5A722826AA700891B10 /* SGPlayer+DisplayView.h in Headers */,
 				7946B5A522826AA700891B10 /* SGPlayerBuildConfig.h in Headers */,
-				7946B5DD22826FB900891B10 /* SGAudioManager.h in Headers */,
 				7946B58F22826AA700891B10 /* SGDisplayView.h in Headers */,
 				7946B59E22826AA700891B10 /* SGGLProgram.h in Headers */,
 				7946B59A22826AA700891B10 /* SGGLTextureNV12.h in Headers */,
@@ -579,7 +526,6 @@
 				7946B5AE22826AA700891B10 /* SGMatrix.m in Sources */,
 				7946B59022826AA700891B10 /* SGGLViewController.m in Sources */,
 				7992D5BB2283BE9200D7208B /* SGPLFScreen.m in Sources */,
-				7946B5D922826FB900891B10 /* SGAudioManager.m in Sources */,
 				7946B5B922826AA700891B10 /* SGPlayerImp.m in Sources */,
 				7992D5AA2283BE9200D7208B /* SGPLFGLViewController.m in Sources */,
 				7992D5BC2283BE9200D7208B /* SGPLFDisplayLink.m in Sources */,

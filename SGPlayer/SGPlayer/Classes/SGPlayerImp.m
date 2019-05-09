@@ -15,7 +15,7 @@
 #import "SGPlayerBuildConfig.h"
 
 #if SGPLATFORM_TARGET_OS_IPHONE_OR_TV
-#import "SGAudioManager.h"
+//#import "SGAudioManager.h"
 #endif
 
 @interface SGPlayer ()
@@ -43,7 +43,7 @@
 {
     if (self = [super init]) {
 #if SGPLATFORM_TARGET_OS_IPHONE_OR_TV
-        [self setupNotification];
+//        [self setupNotification];
 #endif
         self.decoder = [SGPlayerDecoder decoderByDefault];
         self.contentURL = nil;
@@ -306,14 +306,15 @@
     [self cleanPlayer];
 
 #if SGPLATFORM_TARGET_OS_IPHONE_OR_TV
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [[SGAudioManager manager] removeHandlerTarget:self];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//    [[SGAudioManager manager] removeHandlerTarget:self];
 #endif
 }
 
 #pragma mark - background mode
 
 #if SGPLATFORM_TARGET_OS_IPHONE_OR_TV
+/*
 - (void)setupNotification
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -355,6 +356,7 @@
         }
     }];
 }
+ */
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
