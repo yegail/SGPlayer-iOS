@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SGPlayerBuildConfig.h"
-#import <SGPlatform/SGPLFImage.h>
+#import "GPLFImage.h"
 
 typedef NS_ENUM(NSUInteger, SGGLFrameType) {
     SGGLFrameTypeNV12,
