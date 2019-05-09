@@ -20,8 +20,7 @@
 		7946B632228279A300891B10 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B630228279A200891B10 /* PlayerViewController.m */; };
 		7946B63A22827D1200891B10 /* google-help-vr.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63822827D1100891B10 /* google-help-vr.mp4 */; };
 		7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63922827D1100891B10 /* i-see-fire.mp4 */; };
-		7946B6732282890200891B10 /* SGPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B6722282890200891B10 /* SGPlatform.framework */; };
-		7946B6752282890200891B10 /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B6742282890200891B10 /* SGPlayer.framework */; };
+		79963F212283C2CB0097746D /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B6742282890200891B10 /* SGPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +45,6 @@
 		7946B631228279A300891B10 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		7946B63822827D1100891B10 /* google-help-vr.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "google-help-vr.mp4"; sourceTree = "<group>"; };
 		7946B63922827D1100891B10 /* i-see-fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "i-see-fire.mp4"; sourceTree = "<group>"; };
-		7946B6722282890200891B10 /* SGPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7946B6742282890200891B10 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,8 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7946B6732282890200891B10 /* SGPlatform.framework in Frameworks */,
-				7946B6752282890200891B10 /* SGPlayer.framework in Frameworks */,
+				79963F212283C2CB0097746D /* SGPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +100,6 @@
 		7946B619228275A600891B10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7946B6722282890200891B10 /* SGPlatform.framework */,
 				7946B6742282890200891B10 /* SGPlayer.framework */,
 			);
 			name = Frameworks;
