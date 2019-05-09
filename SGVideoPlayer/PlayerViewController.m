@@ -63,7 +63,11 @@
 - (SGVideoPlayer *)videoPlayer {
     if (!_videoPlayer) {
         _videoPlayer = [[SGVideoPlayer alloc] init];
-        _videoPlayer.frame = CGRectMake(0, 220, CGRectGetWidth([UIScreen mainScreen].bounds), 200);
+        _videoPlayer.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 400);
+        __weak typeof(self) weakSelf = self;
+        _videoPlayer.closeBlock = ^(SGVideoPlayer *player) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        };
     }
     return _videoPlayer;
 }
@@ -87,6 +91,14 @@
 - (IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
 }
 
 @end

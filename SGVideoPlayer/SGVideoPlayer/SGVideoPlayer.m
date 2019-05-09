@@ -209,10 +209,10 @@ static CGFloat const playBtnSideLength = 60.0f;
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationLandscapeLeft) {
         //NSLog(@"UIDeviceOrientationLandscapeLeft");
-        [self orientationLeftFullScreen];
+        [self orientationLeftFullScreen:NO];
     }else if (orientation == UIDeviceOrientationLandscapeRight) {
         //NSLog(@"UIDeviceOrientationLandscapeRight");
-        [self orientationRightFullScreen];
+        [self orientationRightFullScreen:NO];
     }else if (orientation == UIDeviceOrientationPortrait) {
         //NSLog(@"UIDeviceOrientationPortrait");
         [self smallScreen];
@@ -226,48 +226,52 @@ static CGFloat const playBtnSideLength = 60.0f;
 
 - (void)actionFullScreen {
     if (!self.isFullScreen) {
-        [self orientationLeftFullScreen];
+        [self orientationRightFullScreen:YES];
     }else {
         [self smallScreen];
     }
 }
 
-- (void)orientationLeftFullScreen {
+- (void)orientationLeftFullScreen:(BOOL)isAction {
+    if ([self.superview isKindOfClass:[UIWindow class]]) return;
     self.isFullScreen = YES;
     self.zoomScreenBtn.selected = YES;
     [self.keyWindow addSubview:self];
     
-    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
+    if (isAction) {
+        [self setStatusBarOrientation:UIInterfaceOrientationLandscapeLeft];
+    }
     [self updateConstraintsIfNeeded];
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.transform = CGAffineTransformMakeRotation(M_PI / 2);
         self.frame = self.keyWindow.bounds;
-        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.height, bottomBaHeight);
-        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.width - bottomBaHeight, self.keyWindow.bounds.size.height, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.height - playBtnSideLength) / 2, (self.keyWindow.bounds.size.width - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
-        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.height / 2, self.keyWindow.bounds.size.width / 2);
+        self.topBar.hidden = YES;
+        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.width, bottomBaHeight);
+        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.height - bottomBaHeight, self.keyWindow.bounds.size.width, bottomBaHeight);
+        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.width - playBtnSideLength) / 2, (self.keyWindow.bounds.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.width / 2, self.keyWindow.bounds.size.height / 2);
     }];
     
     [self setStatusBarHidden:YES];
 }
 
-- (void)orientationRightFullScreen {
+- (void)orientationRightFullScreen:(BOOL)isAction {
+    if ([self.superview isKindOfClass:[UIWindow class]]) return;
     self.isFullScreen = YES;
     self.zoomScreenBtn.selected = YES;
     [self.keyWindow addSubview:self];
-    
-    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeRight] forKey:@"orientation"];
-    
+    if (isAction) {
+        [self setStatusBarOrientation:UIInterfaceOrientationLandscapeLeft];
+    }
     [self updateConstraintsIfNeeded];
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.transform = CGAffineTransformMakeRotation(-M_PI / 2);
         self.frame = self.keyWindow.bounds;
-        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.height, bottomBaHeight);
-        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.width - bottomBaHeight, self.keyWindow.bounds.size.height, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.height - playBtnSideLength) / 2, (self.keyWindow.bounds.size.width - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
-        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.height / 2, self.keyWindow.bounds.size.width / 2);
+        self.topBar.hidden = YES;
+        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.width, bottomBaHeight);
+        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.height - bottomBaHeight, self.keyWindow.bounds.size.width, bottomBaHeight);
+        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.width - playBtnSideLength) / 2, (self.keyWindow.bounds.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.width / 2, self.keyWindow.bounds.size.width / 2);
     }];
     [self setStatusBarHidden:YES];
 }
@@ -288,6 +292,7 @@ static CGFloat const playBtnSideLength = 60.0f;
     [UIView animateWithDuration:0.3 animations:^{
         self.transform = CGAffineTransformMakeRotation(0);
         self.frame = self.playerOriginalFrame;
+        self.topBar.hidden = NO;
         self.topBar.frame = CGRectMake(0, 0, self.playerOriginalFrame.size.width, bottomBaHeight);
         self.bottomBar.frame = CGRectMake(0, self.playerOriginalFrame.size.height - bottomBaHeight, self.self.playerOriginalFrame.size.width, bottomBaHeight);
         self.playOrPauseBtn.frame = CGRectMake((self.playerOriginalFrame.size.width - playBtnSideLength) / 2, (self.playerOriginalFrame.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
@@ -295,6 +300,18 @@ static CGFloat const playBtnSideLength = 60.0f;
         [self updateConstraintsIfNeeded];
     }];
     [self setStatusBarHidden:NO];
+}
+
+- (void)setStatusBarOrientation:(UIInterfaceOrientation)orientation{
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector  = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        // 从2开始是因为前两个参数已经被selector和target占用
+        [invocation setArgument:&orientation atIndex:2];
+        [invocation invoke];
+    }
 }
 
 #pragma mark - app notif
