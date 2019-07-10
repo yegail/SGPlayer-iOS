@@ -246,8 +246,8 @@
 		7946B54D22826AA700891B10 /* SGGLView */ = {
 			isa = PBXGroup;
 			children = (
-				7946B54E22826AA700891B10 /* SGGLViewController.m */,
 				7946B55022826AA700891B10 /* SGGLViewController.h */,
+				7946B54E22826AA700891B10 /* SGGLViewController.m */,
 				7946B54F22826AA700891B10 /* SGGLFrame.h */,
 				7946B55122826AA700891B10 /* SGGLFrame.m */,
 			);
@@ -336,13 +336,13 @@
 		7992D5942283BE9100D7208B /* SGPLFOpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				7992D5952283BE9100D7208B /* SGPLFGLViewController.m */,
-				7992D5962283BE9100D7208B /* SGPLFGLView.h */,
-				7992D5972283BE9100D7208B /* SGPLFGLContext.m */,
 				7992D5982283BE9200D7208B /* SGPLFOpenGL.h */,
-				7992D5992283BE9200D7208B /* SGPLFGLViewController.h */,
-				7992D59A2283BE9200D7208B /* SGPLFGLView.m */,
 				7992D59B2283BE9200D7208B /* SGPLFGLContext.h */,
+				7992D5972283BE9100D7208B /* SGPLFGLContext.m */,
+				7992D5962283BE9100D7208B /* SGPLFGLView.h */,
+				7992D59A2283BE9200D7208B /* SGPLFGLView.m */,
+				7992D5992283BE9200D7208B /* SGPLFGLViewController.h */,
+				7992D5952283BE9100D7208B /* SGPLFGLViewController.m */,
 			);
 			path = SGPLFOpenGL;
 			sourceTree = "<group>";
@@ -351,15 +351,15 @@
 			isa = PBXGroup;
 			children = (
 				7992D59E2283BE9200D7208B /* SGPLFObject.h */,
-				7992D59F2283BE9200D7208B /* SGPLFColor.h */,
-				7992D5A02283BE9200D7208B /* SGPLFView.m */,
-				7992D5A12283BE9200D7208B /* SGPLFImage.m */,
-				7992D5A22283BE9200D7208B /* SGPLFDisplayLink.h */,
-				7992D5A32283BE9200D7208B /* SGPLFScreen.h */,
-				7992D5A42283BE9200D7208B /* SGPLFImage.h */,
 				7992D5A52283BE9200D7208B /* SGPLFView.h */,
-				7992D5A62283BE9200D7208B /* SGPLFColor.m */,
+				7992D5A02283BE9200D7208B /* SGPLFView.m */,
+				7992D5A32283BE9200D7208B /* SGPLFScreen.h */,
 				7992D5A72283BE9200D7208B /* SGPLFScreen.m */,
+				7992D5A42283BE9200D7208B /* SGPLFImage.h */,
+				7992D5A12283BE9200D7208B /* SGPLFImage.m */,
+				7992D59F2283BE9200D7208B /* SGPLFColor.h */,
+				7992D5A62283BE9200D7208B /* SGPLFColor.m */,
+				7992D5A22283BE9200D7208B /* SGPLFDisplayLink.h */,
 				7992D5A82283BE9200D7208B /* SGPLFDisplayLink.m */,
 			);
 			path = SGPLFObject;
@@ -462,6 +462,7 @@
 				9CEFA6D21E7122BF00835CAB /* Frameworks */,
 				9CEFA6D31E7122BF00835CAB /* Headers */,
 				9CEFA6D41E7122BF00835CAB /* Resources */,
+				7962007A22D4259C002F7EC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -515,6 +516,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7962007A22D4259C002F7EC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n# 如果真机包或模拟包不存在，则退出合并\nif [ ! -d \"${DEVICE_DIR}\" ] || [ ! -d \"${SIMULATOR_DIR}\" ]\nthen\nexit 0\nfi\n\n# 如果合并包已经存在，则替换\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n\n# 使用lipo命令将其合并成一个通用framework  \n# 最后将生成的通用framework放置在工程根目录下新建的Products目录下  \nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\n#合并完成后打开目录\nopen \"${SRCROOT}/Products\"\n\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9CEFA6D11E7122BF00835CAB /* Sources */ = {

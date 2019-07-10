@@ -41,7 +41,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    /*if (indexPath.row == 0) {
         [self.player destroyPlayer];
         self.player = nil;
         
@@ -64,13 +64,10 @@
             [player destroyPlayer];
             player = nil;
         };
-    }
-    else {
-        PlayerViewController * obj = [[PlayerViewController alloc] init];
-        obj.demoType = indexPath.row;
-        [self.navigationController pushViewController:obj animated:YES];
-        
-    }
+    }*/
+    PlayerViewController * obj = [[PlayerViewController alloc] init];
+    obj.demoType = indexPath.row;
+    [self.navigationController pushViewController:obj animated:YES];
 }
 
 #pragma makr -UIScrollViewDelegate

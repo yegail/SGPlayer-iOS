@@ -14,12 +14,12 @@
 		7946B6102282752900891B10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7946B60E2282752900891B10 /* LaunchScreen.storyboard */; };
 		7946B6132282752900891B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6122282752900891B10 /* main.m */; };
 		7946B6212282773500891B10 /* SGVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6202282773500891B10 /* SGVideoPlayer.m */; };
-		7946B6262282779200891B10 /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7946B6242282779200891B10 /* ImageResources.bundle */; };
-		7946B6272282779200891B10 /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6252282779200891B10 /* XLSlider.m */; };
 		7946B62B228277C900891B10 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B62A228277C800891B10 /* AFNetworkReachabilityManager.m */; };
 		7946B632228279A300891B10 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B630228279A200891B10 /* PlayerViewController.m */; };
 		7946B63A22827D1200891B10 /* google-help-vr.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63822827D1100891B10 /* google-help-vr.mp4 */; };
 		7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63922827D1100891B10 /* i-see-fire.mp4 */; };
+		796200C522D466D4002F7EC8 /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 796200C322D466D4002F7EC8 /* ImageResources.bundle */; };
+		796200C622D466D4002F7EC8 /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 796200C422D466D4002F7EC8 /* XLSlider.m */; };
 		79963F212283C2CB0097746D /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B6742282890200891B10 /* SGPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +36,6 @@
 		7946B6122282752900891B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7946B61F2282773500891B10 /* SGVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGVideoPlayer.h; sourceTree = "<group>"; };
 		7946B6202282773500891B10 /* SGVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGVideoPlayer.m; sourceTree = "<group>"; };
-		7946B6232282779200891B10 /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
-		7946B6242282779200891B10 /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
-		7946B6252282779200891B10 /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
 		7946B629228277C800891B10 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		7946B62A228277C800891B10 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		7946B630228279A200891B10 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
@@ -46,6 +43,9 @@
 		7946B63822827D1100891B10 /* google-help-vr.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "google-help-vr.mp4"; sourceTree = "<group>"; };
 		7946B63922827D1100891B10 /* i-see-fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "i-see-fire.mp4"; sourceTree = "<group>"; };
 		7946B6742282890200891B10 /* SGPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		796200C222D466D4002F7EC8 /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		796200C322D466D4002F7EC8 /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		796200C422D466D4002F7EC8 /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,21 +108,11 @@
 		7946B61E2282773500891B10 /* SGVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				7946B6222282779200891B10 /* Slider */,
+				796200C122D466D4002F7EC8 /* XLSlider */,
 				7946B61F2282773500891B10 /* SGVideoPlayer.h */,
 				7946B6202282773500891B10 /* SGVideoPlayer.m */,
 			);
 			path = SGVideoPlayer;
-			sourceTree = "<group>";
-		};
-		7946B6222282779200891B10 /* Slider */ = {
-			isa = PBXGroup;
-			children = (
-				7946B6242282779200891B10 /* ImageResources.bundle */,
-				7946B6232282779200891B10 /* XLSlider.h */,
-				7946B6252282779200891B10 /* XLSlider.m */,
-			);
-			path = Slider;
 			sourceTree = "<group>";
 		};
 		7946B628228277C800891B10 /* Reachability */ = {
@@ -142,6 +132,16 @@
 				7946B6122282752900891B10 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		796200C122D466D4002F7EC8 /* XLSlider */ = {
+			isa = PBXGroup;
+			children = (
+				796200C222D466D4002F7EC8 /* XLSlider.h */,
+				796200C322D466D4002F7EC8 /* ImageResources.bundle */,
+				796200C422D466D4002F7EC8 /* XLSlider.m */,
+			);
+			path = XLSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +210,8 @@
 				7946B60D2282752900891B10 /* Assets.xcassets in Resources */,
 				7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */,
 				7946B60B2282752700891B10 /* Main.storyboard in Resources */,
-				7946B6262282779200891B10 /* ImageResources.bundle in Resources */,
 				7946B63A22827D1200891B10 /* google-help-vr.mp4 in Resources */,
+				796200C522D466D4002F7EC8 /* ImageResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +225,8 @@
 				7946B632228279A300891B10 /* PlayerViewController.m in Sources */,
 				7946B6212282773500891B10 /* SGVideoPlayer.m in Sources */,
 				7946B6082282752700891B10 /* ViewController.m in Sources */,
-				7946B6272282779200891B10 /* XLSlider.m in Sources */,
 				7946B6132282752900891B10 /* main.m in Sources */,
+				796200C622D466D4002F7EC8 /* XLSlider.m in Sources */,
 				7946B62B228277C900891B10 /* AFNetworkReachabilityManager.m in Sources */,
 				7946B6052282752700891B10 /* AppDelegate.m in Sources */,
 			);
@@ -370,8 +370,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46D9KM3A89;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9A59CDXZH8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
@@ -382,8 +382,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yegail.SGVideoPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trs.SGVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "TRS Mobile Wildcard GL Provision";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,8 +393,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46D9KM3A89;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
@@ -404,8 +405,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yegail.SGVideoPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trs.SGVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

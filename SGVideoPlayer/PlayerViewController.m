@@ -31,7 +31,7 @@
     static NSURL * liveVideo = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        normalVideo = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"i-see-fire" ofType:@"mp4"]];
+        normalVideo = [NSURL URLWithString:@"http://www.xzcmvideo.cn//masvod/public/2019/06/27/20190627_16b971ccd99_r1_1200k.mp4"];
         vrVideo = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"google-help-vr" ofType:@"mp4"]];
         vrVideoOnline = [NSURL URLWithString:@"http://media.snxw.com/masvod/public/2017/04/11/20170411_15b5b277d53_r1_1200k.mp4"];
         liveVideo = [NSURL URLWithString:@"http://cstv.live.wscdns.com/live/xiamen/playlist.m3u8"];
@@ -63,7 +63,7 @@
 - (SGVideoPlayer *)videoPlayer {
     if (!_videoPlayer) {
         _videoPlayer = [[SGVideoPlayer alloc] init];
-        _videoPlayer.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 400);
+        _videoPlayer.frame = CGRectMake(0, 50, CGRectGetWidth([UIScreen mainScreen].bounds), 300);
         __weak typeof(self) weakSelf = self;
         _videoPlayer.closeBlock = ^(SGVideoPlayer *player) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
