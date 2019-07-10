@@ -559,6 +559,26 @@ static NSString * const AVMediaSelectionOptionTrackIDKey = @"MediaSelectionOptio
         self.avPlayerItem = [AVPlayerItem playerItemWithAsset:self.avAsset];
     }
     
+    if (self.abstractPlayer.hasGrayFilter) {
+        self.avPlayerItem.videoComposition = [AVVideoComposition videoCompositionWithAsset:self.avAsset
+                                                              applyingCIFiltersWithHandler:
+                                              ^(AVAsynchronousCIImageFilteringRequest *request)
+                                              {
+                                                  NSError *err = nil;
+                                                  CIImage *ciImage = request.sourceImage;
+                                                  //灰色滤镜
+                                                  CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
+                                                  [filter setValue:ciImage forKey:kCIInputImageKey];
+                                                  [filter setValue:[CIColor colorWithRed:0.7 green:0.7 blue:0.7] forKey:kCIInputColorKey];
+                                                  [filter setValue:@1.0 forKey:kCIInputIntensityKey];
+                                                  
+                                                  CIImage *outputImage = filter.outputImage;
+                                                  if (outputImage)
+                                                      [request finishWithImage:outputImage context:nil];
+                                                  else
+                                                      [request finishWithError:err];
+                                              }];
+    }
     [self.avPlayerItem addObserver:self forKeyPath:@"status" options:0 context:NULL];
     [self.avPlayerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:NULL];
     [self.avPlayerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:NULL];

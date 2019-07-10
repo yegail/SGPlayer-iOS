@@ -53,6 +53,7 @@
         self.viewGravityMode = SGGravityModeResizeAspect;
         self.playableBufferInterval = 2.f;
         self.viewAnimationHidden = YES;
+        self.hasGrayFilter = NO;
         self.volume = 1;
         self.displayView = [SGDisplayView displayViewWithAbstractPlayer:self];
     }
