@@ -101,6 +101,7 @@ static CGFloat const playBtnSideLength = 60.0f;
                 displayMode:(SGDisplayMode)displayMode {
     
     self.player.displayMode = displayMode;
+    self.player.hasGrayFilter = YES;
     [self.player replaceVideoWithURL:contentURL videoType:videoType];
     
     [self insertSubview:self.player.view atIndex:0];

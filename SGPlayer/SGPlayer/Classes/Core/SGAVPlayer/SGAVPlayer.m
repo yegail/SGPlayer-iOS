@@ -564,19 +564,23 @@ static NSString * const AVMediaSelectionOptionTrackIDKey = @"MediaSelectionOptio
                                                               applyingCIFiltersWithHandler:
                                               ^(AVAsynchronousCIImageFilteringRequest *request)
                                               {
-                                                  NSError *err = nil;
-                                                  CIImage *ciImage = request.sourceImage;
-                                                  //灰色滤镜
-                                                  CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
-                                                  [filter setValue:ciImage forKey:kCIInputImageKey];
-                                                  [filter setValue:[CIColor colorWithRed:0.7 green:0.7 blue:0.7] forKey:kCIInputColorKey];
-                                                  [filter setValue:@1.0 forKey:kCIInputIntensityKey];
-                                                  
-                                                  CIImage *outputImage = filter.outputImage;
-                                                  if (outputImage)
+                                                  @autoreleasepool {
+                                                      NSError *err = nil;
+                                                      CIImage *ciImage = request.sourceImage;
+                                                      //灰色滤镜
+                                                      CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
+                                                      [filter setValue:ciImage forKey:kCIInputImageKey];
+                                                      [filter setValue:[CIColor colorWithRed:0.7 green:0.7 blue:0.7] forKey:kCIInputColorKey];
+                                                      [filter setValue:@1.0 forKey:kCIInputIntensityKey];
+                                                      
+                                                      CIImage *outputImage = filter.outputImage;
+                                                      if (outputImage)
                                                       [request finishWithImage:outputImage context:nil];
-                                                  else
+                                                      else
                                                       [request finishWithError:err];
+                                                      
+                                                      outputImage = nil;
+                                                  }
                                               }];
     }
     [self.avPlayerItem addObserver:self forKeyPath:@"status" options:0 context:NULL];
