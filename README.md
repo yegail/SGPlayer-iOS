@@ -4,10 +4,9 @@ forked from [SGPlayer](https://github.com/libobjc/SGPlayer)
 
 # 功能
 
-* 播放普通视频；
-* 播放360°全景视频，VR视频；
-* 可手势和感应来控制VR视频的方向；
-* distortion correction in cardboard mode.
+* 支持播放360°全景视频。
+* 支持手势、传感器操控360°全景视频。
+* 支持双眼模式，具有畸变校正、色散校正。
 
 
 # 安装
