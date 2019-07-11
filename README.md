@@ -55,7 +55,7 @@ self.player.hasGrayFilter = YES;
 [self.player play];
 ```
 
-#### release note
+#### 版本信息
 
 ###### v1.0.1 
 
