@@ -1,6 +1,6 @@
 # SGPlayer-iOS
 forked from [SGPlayer](https://github.com/libobjc/SGPlayer)
-在SGPlayer的基础上删除了ffmpeg部分，直接使用avplayer播放VR视频。超轻量级VR视频播放器，编译成动态库后只有2.7M，在项目中没有直播，但需要播放VR视频时使用。
+在SGPlayer的基础上删除了ffmpeg部分，直接使用avplayer播放VR视频。超轻量级VR视频播放器，编译成动态库后只有2.7M，在项目中没有直播又需要播放VR视频时使用。
 
 # 功能
 
