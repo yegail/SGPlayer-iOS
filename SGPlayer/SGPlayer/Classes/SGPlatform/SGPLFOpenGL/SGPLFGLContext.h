@@ -24,5 +24,5 @@ typedef EAGLContext SGPLFGLContext;
 
 #endif
 
-SGPLFGLContext * SGPLFGLContextAllocInit();
+SGPLFGLContext * SGPLFGLContextAllocInit(void);
 void SGPLGLContextSetCurrentContext(SGPLFGLContext * context);
