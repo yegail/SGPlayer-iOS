@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792B52832331F4CA00D6974B /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792B52822331F4CA00D6974B /* SGPlayer.framework */; };
 		7946B6052282752700891B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6042282752700891B10 /* AppDelegate.m */; };
 		7946B6082282752700891B10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7946B6072282752700891B10 /* ViewController.m */; };
 		7946B60B2282752700891B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7946B6092282752700891B10 /* Main.storyboard */; };
@@ -20,10 +21,10 @@
 		7946B63B22827D1200891B10 /* i-see-fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7946B63922827D1100891B10 /* i-see-fire.mp4 */; };
 		796200C522D466D4002F7EC8 /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 796200C322D466D4002F7EC8 /* ImageResources.bundle */; };
 		796200C622D466D4002F7EC8 /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 796200C422D466D4002F7EC8 /* XLSlider.m */; };
-		79963F212283C2CB0097746D /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946B6742282890200891B10 /* SGPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		792B52822331F4CA00D6974B /* SGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SGPlayer.framework; path = SGPlayer/Products/SGPlayer.framework; sourceTree = "<group>"; };
 		7946B6002282752700891B10 /* SGVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7946B6032282752700891B10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7946B6042282752700891B10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79963F212283C2CB0097746D /* SGPlayer.framework in Frameworks */,
+				792B52832331F4CA00D6974B /* SGPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +101,7 @@
 		7946B619228275A600891B10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				792B52822331F4CA00D6974B /* SGPlayer.framework */,
 				7946B6742282890200891B10 /* SGPlayer.framework */,
 			);
 			name = Frameworks;
@@ -375,6 +377,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
+					"$(PROJECT_DIR)/SGPlayer/Products",
 				);
 				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -398,6 +401,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SGVideoPlayer/SGPlayer",
+					"$(PROJECT_DIR)/SGPlayer/Products",
 				);
 				INFOPLIST_FILE = SGVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

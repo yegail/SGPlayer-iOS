@@ -7,16 +7,19 @@
 //
 
 #import "SGVideoPlayer.h"
-#import "XLSlider.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AFNetworkReachabilityManager.h"
 
+#define BarrageStatus @"BarrageStatus"
+
 static CGFloat const barAnimateSpeed = 0.5f;
-static CGFloat const barShowDuration = 2.5f;
-static CGFloat const opacity = 0.7f;
+static CGFloat const barShowDuration = 5.0f;
+static CGFloat const opacity = 1.0f;
 static CGFloat const bottomBaHeight = 40.0f;
 static CGFloat const playBtnSideLength = 60.0f;
 
+/*此标识用于避免网络状态发生更改时，重复多次弹出节约流量提示*/
+static BOOL isPresentAlert;
 
 @interface SGVideoPlayer()
 
@@ -24,16 +27,18 @@ static CGFloat const playBtnSideLength = 60.0f;
 @property (nonatomic, strong) UIView *playSuprView;
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UIView *bottomBar;
+@property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIButton *playOrPauseBtn;
 @property (nonatomic, strong) UILabel *totalDurationLabel;
 @property (nonatomic, strong) UILabel *progressLabel;
-@property (nonatomic, strong) XLSlider *slider;
+@property (nonatomic, strong) UIProgressView *loadingProgress;//缓存进度
+@property (nonatomic, strong) UISlider *slider;//播放进度
 @property (nonatomic, strong) UIWindow *keyWindow;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, assign) CGRect playerOriginalFrame;
 @property (nonatomic, strong) UIButton *zoomScreenBtn;
 
-/**video player*/
+/**video player, 可播放普通视频、AR视频*/
 @property (nonatomic, strong) SGPlayer * player;
 
 @property (nonatomic, strong) UITableView *bindTableView;
@@ -50,7 +55,6 @@ static CGFloat const playBtnSideLength = 60.0f;
 @property (nonatomic, assign) BOOL isPlayingBeforeResignActive;
 
 /*此标识用于避免网络状态发生更改时，重复多次弹出节约流量提示*/
-@property (nonatomic, assign) BOOL isPresentAlert;
 @property (nonatomic, assign) BOOL isLocalFilePlay;
 
 
@@ -107,17 +111,20 @@ static CGFloat const playBtnSideLength = 60.0f;
     [self insertSubview:self.player.view atIndex:0];
     [self insertSubview:self.activityIndicatorView belowSubview:self.playOrPauseBtn];
     [self.activityIndicatorView startAnimating];
+    
     //play from start
     [self playOrPause:self.playOrPauseBtn];
-    [self addSubview:self.topBar];
+    //[self addSubview:self.topBar];
     [self addSubview:self.bottomBar];
     [self insertSubview:self.playOrPauseBtn aboveSubview:self.activityIndicatorView];
     
     //whether is onlive play.
     BOOL isLive = [contentURL.pathExtension isEqualToString:@"m3u8"];
-    self.progressLabel.hidden = self.totalDurationLabel.hidden = self.slider.hidden = isLive;
+    self.progressLabel.hidden = self.totalDurationLabel.hidden = self.slider.hidden = self.loadingProgress.hidden = isLive;
+    self.slider.value = 0;
+    self.progressLabel.text = @"00:00";
+    self.isOriginalFrame = NO;
     
-    //弹出正在使用移动网络，继续播放将消耗流量
     [self afNetworkingReachabilityViaWWANAlert];
 }
 
@@ -127,8 +134,11 @@ static CGFloat const playBtnSideLength = 60.0f;
 
 - (void)destroyPlayer {
     [self.player stop];
+    [self.player removePlayerNotificationTarget:self];
     [self.slider removeFromSuperview];
+    [self.loadingProgress removeFromSuperview];
     self.slider = nil;
+    self.loadingProgress = nil;
     [self removeFromSuperview];
 }
 
@@ -140,6 +150,10 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (void)playerScrollIsSupportSmallWindowPlay:(BOOL)support {
     
     NSAssert(self.bindTableView != nil, @"必须绑定对应的tableview！！！");
+    
+    if (self.player.state != SGPlayerStatePlaying) {
+        return;
+    }
     
     self.currentPlayCellRect = [self.bindTableView rectForRowAtIndexPath:self.currentIndexPath];
     self.currentIndexPath = self.currentIndexPath;
@@ -188,9 +202,9 @@ static CGFloat const playBtnSideLength = 60.0f;
     if (!self.isOriginalFrame) {
         self.playerOriginalFrame = self.frame;
         self.playSuprView = self.superview;
-        self.topBar.frame = CGRectMake(0, 0, self.playerOriginalFrame.size.width, bottomBaHeight);
+        self.topBar.frame = CGRectMake(0, 20, self.playerOriginalFrame.size.width, bottomBaHeight);
         self.bottomBar.frame = CGRectMake(0, self.playerOriginalFrame.size.height - bottomBaHeight, self.self.playerOriginalFrame.size.width, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.playerOriginalFrame.size.width - playBtnSideLength) / 2, (self.playerOriginalFrame.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.playOrPauseBtn.frame = CGRectMake(5, (self.playerOriginalFrame.size.height - playBtnSideLength - bottomBaHeight + 5), playBtnSideLength, playBtnSideLength);
         self.activityIndicatorView.center = CGPointMake(self.playerOriginalFrame.size.width / 2, self.playerOriginalFrame.size.height / 2);
         self.isOriginalFrame = YES;
     }
@@ -209,71 +223,67 @@ static CGFloat const playBtnSideLength = 60.0f;
     if (self.smallWinPlaying) return;
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationLandscapeLeft) {
-        //NSLog(@"UIDeviceOrientationLandscapeLeft");
-        [self orientationLeftFullScreen:NO];
+        [self orientationLeftFullScreen];
     }else if (orientation == UIDeviceOrientationLandscapeRight) {
-        //NSLog(@"UIDeviceOrientationLandscapeRight");
-        [self orientationRightFullScreen:NO];
+        [self orientationRightFullScreen];
     }else if (orientation == UIDeviceOrientationPortrait) {
-        //NSLog(@"UIDeviceOrientationPortrait");
         [self smallScreen];
     }
 }
 
 - (void)actionClose {
-    
-    if(self.closeBlock) {self.closeBlock(self);}
-}
-
-- (void)actionFullScreen {
-    if (!self.isFullScreen) {
-        [self orientationRightFullScreen:YES];
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+        if(self.closeBlock) {self.closeBlock(self);}
     }else {
         [self smallScreen];
     }
 }
 
-- (void)orientationLeftFullScreen:(BOOL)isAction {
+- (void)actionFullScreen {
+    if (!self.isFullScreen) {
+        [self orientationLeftFullScreen];
+    }else {
+        [self smallScreen];
+    }
+}
+
+- (void)orientationLeftFullScreen {
     if ([self.superview isKindOfClass:[UIWindow class]]) return;
     self.isFullScreen = YES;
     self.zoomScreenBtn.selected = YES;
     [self.keyWindow addSubview:self];
     
-    if (isAction) {
-        [self setStatusBarOrientation:UIInterfaceOrientationLandscapeLeft];
-    }
     [self updateConstraintsIfNeeded];
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.transform = CGAffineTransformMakeRotation(M_PI / 2);
         self.frame = self.keyWindow.bounds;
-        self.topBar.hidden = YES;
-        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.width, bottomBaHeight);
-        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.height - bottomBaHeight, self.keyWindow.bounds.size.width, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.width - playBtnSideLength) / 2, (self.keyWindow.bounds.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
-        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.width / 2, self.keyWindow.bounds.size.height / 2);
+        self.topBar.frame = CGRectMake(0, 20, self.keyWindow.bounds.size.height, bottomBaHeight);
+        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.width - bottomBaHeight, self.keyWindow.bounds.size.height, bottomBaHeight);
+        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.height - playBtnSideLength) / 2, (self.keyWindow.bounds.size.width - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.height / 2, self.keyWindow.bounds.size.width / 2);
     }];
     
     [self setStatusBarHidden:YES];
 }
 
-- (void)orientationRightFullScreen:(BOOL)isAction {
+- (void)orientationRightFullScreen {
     if ([self.superview isKindOfClass:[UIWindow class]]) return;
     self.isFullScreen = YES;
     self.zoomScreenBtn.selected = YES;
     [self.keyWindow addSubview:self];
-    if (isAction) {
-        [self setStatusBarOrientation:UIInterfaceOrientationLandscapeLeft];
-    }
+    
     [self updateConstraintsIfNeeded];
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.transform = CGAffineTransformMakeRotation(-M_PI / 2);
         self.frame = self.keyWindow.bounds;
-        self.topBar.hidden = YES;
-        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.width, bottomBaHeight);
-        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.height - bottomBaHeight, self.keyWindow.bounds.size.width, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.width - playBtnSideLength) / 2, (self.keyWindow.bounds.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
-        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.width / 2, self.keyWindow.bounds.size.width / 2);
+        self.topBar.frame = CGRectMake(0, 0, self.keyWindow.bounds.size.height, bottomBaHeight);
+        self.bottomBar.frame = CGRectMake(0, self.keyWindow.bounds.size.width - bottomBaHeight, self.keyWindow.bounds.size.height, bottomBaHeight);
+        self.playOrPauseBtn.frame = CGRectMake((self.keyWindow.bounds.size.height - playBtnSideLength) / 2, (self.keyWindow.bounds.size.width - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.activityIndicatorView.center = CGPointMake(self.keyWindow.bounds.size.height / 2, self.keyWindow.bounds.size.width / 2);
     }];
+    
     [self setStatusBarHidden:YES];
 }
 
@@ -294,9 +304,9 @@ static CGFloat const playBtnSideLength = 60.0f;
         self.transform = CGAffineTransformMakeRotation(0);
         self.frame = self.playerOriginalFrame;
         self.topBar.hidden = NO;
-        self.topBar.frame = CGRectMake(0, 0, self.playerOriginalFrame.size.width, bottomBaHeight);
+        self.topBar.frame = CGRectMake(0, 20, self.playerOriginalFrame.size.width, bottomBaHeight);
         self.bottomBar.frame = CGRectMake(0, self.playerOriginalFrame.size.height - bottomBaHeight, self.self.playerOriginalFrame.size.width, bottomBaHeight);
-        self.playOrPauseBtn.frame = CGRectMake((self.playerOriginalFrame.size.width - playBtnSideLength) / 2, (self.playerOriginalFrame.size.height - playBtnSideLength) / 2, playBtnSideLength, playBtnSideLength);
+        self.playOrPauseBtn.frame = CGRectMake(5, (self.playerOriginalFrame.size.height - playBtnSideLength - bottomBaHeight + 5), playBtnSideLength, playBtnSideLength);
         self.activityIndicatorView.center = CGPointMake(self.playerOriginalFrame.size.width / 2, self.playerOriginalFrame.size.height / 2);
         [self updateConstraintsIfNeeded];
     }];
@@ -347,10 +357,10 @@ static CGFloat const playBtnSideLength = 60.0f;
     
     AFNetworkReachabilityStatus status = [notification.userInfo[AFNetworkingReachabilityNotificationStatusItem] integerValue];
     if(self.player.state == SGPlayerStateFinished && status == AFNetworkReachabilityStatusReachableViaWWAN
-       && !self.isLocalFilePlay && !self.isPresentAlert) {
+       && !self.isLocalFilePlay && !isPresentAlert) {
         
+        isPresentAlert = YES;
         self.playOrPauseBtn.selected = NO;
-        self.isPresentAlert = YES;
         [self.player pause];
         [self showReachabilityStatusAlert];
         
@@ -362,10 +372,10 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (BOOL)afNetworkingReachabilityViaWWANAlert {
     
     BOOL isReachableViaWWAN = [AFNetworkReachabilityManager sharedManager].isReachableViaWWAN;
-    if( isReachableViaWWAN && !self.isLocalFilePlay && !self.isPresentAlert) {
+    if(isReachableViaWWAN && !self.isLocalFilePlay && !isPresentAlert) {
         
+        isPresentAlert = YES;
         self.playOrPauseBtn.selected = NO;
-        self.isPresentAlert = YES;
         [self.player pause];
         [self showReachabilityStatusAlert];
         
@@ -378,14 +388,15 @@ static CGFloat const playBtnSideLength = 60.0f;
 
 - (void)showReachabilityStatusAlert {
     
-    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"您当前正在使用移动网络，继续播放将消耗流量" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"当前处在非wifi环境，注意流量消耗哦！" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [vc addAction:[UIAlertAction actionWithTitle:@"停止播放" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.isPresentAlert = NO;
+        isPresentAlert = NO;
+        [self destroyPlayer];
     }]];
     [vc addAction:[UIAlertAction actionWithTitle:@"继续播放" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         self.playOrPauseBtn.selected = YES;
         [self.player play];
-        self.isPresentAlert = NO;
+        isPresentAlert = NO;
     }]];
     [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:vc animated:YES completion:^(void){}];
 }
@@ -422,6 +433,7 @@ static CGFloat const playBtnSideLength = 60.0f;
 
 - (void)show {
     [UIView animateWithDuration:barAnimateSpeed animations:^{
+        
         self.topBar.layer.opacity = opacity;
         self.bottomBar.layer.opacity = opacity;
         self.playOrPauseBtn.layer.opacity = opacity;
@@ -440,7 +452,11 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (void)hiden {
     self.inOperation = NO;
     [UIView animateWithDuration:barAnimateSpeed animations:^{
-        self.topBar.layer.opacity = 0.0f;
+        if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+            self.topBar.layer.opacity = opacity;
+        }else {
+            self.topBar.layer.opacity = 0.0f;
+        }
         self.bottomBar.layer.opacity = 0.0f;
         self.playOrPauseBtn.layer.opacity = 0.0f;
     } completion:^(BOOL finished){
@@ -450,36 +466,41 @@ static CGFloat const playBtnSideLength = 60.0f;
     }];
 }
 
-#pragma mark - call back
-
-- (void)sliderValueChange:(XLSlider *)slider {
-    self.progressLabel.text = [self timeFormatted:slider.value * self.player.duration];
-}
-
-- (void)finishChange {
-    self.inOperation = NO;
-    [self performBlock:^{
-        if (!self.barHiden && !self.inOperation) {
-            [self hiden];
-        }
-    } afterDelay:barShowDuration];
+#pragma mark - UISlider
+- (IBAction)didSliderValueChanged:(UISlider *)sender {
     
+    self.progressLabel.text = [self timeFormatted:sender.value * self.player.duration];
+    
+    self.inOperation = YES;
     [self.player pause];
     
-    if (self.slider.middleValue) {
-        [self.player seekToTime:self.player.duration * self.slider.value completeHandler:^(BOOL finished) {
+    if (self.loadingProgress.progress) {
+        [self.player seekToTime:self.player.duration * sender.value completeHandler:^(BOOL finished) {
             [self.player play];
             self.playOrPauseBtn.selected = YES;
             self.activityIndicatorView.hidden = YES;
+            self.inOperation = NO;
         }];
     }
 }
 
-//Dragging the thumb to suspend video playback
-
-- (void)dragSlider {
+- (IBAction)didSliderTaped:(UITapGestureRecognizer *)recognizer {
+    
+    CGPoint location = [recognizer locationInView:recognizer.view];
+    CGFloat value = location.x / CGRectGetWidth(recognizer.view.frame);
+    [(UISlider *)recognizer.view setValue:value animated:YES];
+    
     self.inOperation = YES;
     [self.player pause];
+    
+    if (self.loadingProgress.progress) {
+        [self.player seekToTime:self.player.duration * self.slider.value completeHandler:^(BOOL finished) {
+            [self.player play];
+            self.playOrPauseBtn.selected = YES;
+            self.activityIndicatorView.hidden = YES;
+            self.inOperation = NO;
+        }];
+    }
 }
 
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
@@ -495,49 +516,51 @@ static CGFloat const playBtnSideLength = 60.0f;
 {
     SGState * state = [SGState stateFromUserInfo:notification.userInfo];
     
-    NSString * text;
     switch (state.current) {
         case SGPlayerStateNone:
-            text = @"None";
             break;
         case SGPlayerStateBuffering:
-            text = @"Buffering...";
+        {
             self.activityIndicatorView.hidden = NO;
             [self.activityIndicatorView startAnimating];
+            self.playOrPauseBtn.layer.opacity = 0.0f;
+            [self hiden];
             break;
+        }
         case SGPlayerStateReadyToPlay:
-            text = @"Prepare";
+        {
             self.totalDurationLabel.text = [self timeFormatted:self.player.duration];
-            self.activityIndicatorView.hidden = YES;
             self.playOrPauseBtn.selected = YES;
+            [self show];
             [self.player play];
             break;
+        }
         case SGPlayerStatePlaying:
-            text = @"Playing";
+        {
+            [self.activityIndicatorView stopAnimating];
+            self.activityIndicatorView.hidden = YES;
+        }
             break;
         case SGPlayerStateSuspend:
-            text = @"Suspend";
             break;
         case SGPlayerStateFinished:
         {
-            text = @"Finished";
+            if (self.isFullScreen) {
+                [self smallScreen];
+            }
             if (self.completedPlayingBlock) {
                 [self setStatusBarHidden:NO];
-                if ( self.completedPlayingBlock) {
-                    self.completedPlayingBlock(self);
-                }
-                self.completedPlayingBlock = nil;
-            }else {       //finish and loop playback
+                self.completedPlayingBlock(self);
+            }
+            else {//finish and loop playback
                 self.playOrPauseBtn.selected = NO;
                 [self show];
             }
         }
             break;
         case SGPlayerStateFailed:
-            text = @"Error";
             break;
     }
-    //    self.stateLabel.text = text;
 }
 
 - (void)progressAction:(NSNotification *)notification
@@ -555,8 +578,7 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (void)playableAction:(NSNotification *)notification
 {
     SGPlayable * playable = [SGPlayable playableFromUserInfo:notification.userInfo];
-    self.slider.middleValue = playable.current;
-    NSLog(@"playable time : %f", playable.current);
+    self.loadingProgress.progress = playable.current;
 }
 
 - (void)errorAction:(NSNotification *)notification
@@ -570,8 +592,7 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (NSString *)timeFormatted:(int)totalSeconds {
     int seconds = totalSeconds % 60;
     int minutes = (totalSeconds / 60) % 60;
-    int hours = totalSeconds / 3600;
-    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+    return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
 }
 
 #pragma mark - animation smallWindowPlay
@@ -591,8 +612,6 @@ static CGFloat const playBtnSideLength = 60.0f;
         
         CGFloat w = self.playerOriginalFrame.size.width * 1/4;
         CGFloat h = w * 9/16.0;
-        //        CGFloat w = self.playerOriginalFrame.size.width * 0.5;
-        //        CGFloat h = self.playerOriginalFrame.size.height * 0.5;
         CGRect smallFrame = CGRectMake(tableViewframe.origin.x + tableViewframe.size.width - w, tableViewframe.origin.y + tableViewframe.size.height - h, w, h);
         self.frame = smallFrame;
         self.player.view.frame = self.bounds;
@@ -637,7 +656,6 @@ static CGFloat const playBtnSideLength = 60.0f;
                                       errorAction:@selector(errorAction:)];
         __weak typeof(self) weakSelf = self;
         [_player setViewTapAction:^(SGPlayer * _Nonnull player, SGPLFView * _Nonnull view) {
-            NSLog(@"player display view did click!");
             [weakSelf showOrHidenBar];
         }];
     }
@@ -659,14 +677,23 @@ static CGFloat const playBtnSideLength = 60.0f;
         
         _topBar = [[UIView alloc] init];
         _topBar.backgroundColor = [UIColor clearColor];
-        _topBar.layer.opacity = 0.0f;
+        _topBar.layer.opacity = opacity;
         
         //返回或关闭
-        UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, bottomBaHeight)];
+        UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        closeBtn.translatesAutoresizingMaskIntoConstraints = NO;
         closeBtn.backgroundColor = [UIColor clearColor];
+        closeBtn.hidden = YES;//self.closeHidden;
         [closeBtn setImage:[UIImage imageNamed:@"ImageResources.bundle/close.png"] forState:UIControlStateNormal];
         [closeBtn addTarget:self action:@selector(actionClose) forControlEvents:UIControlEventTouchUpInside];
         [_topBar addSubview:closeBtn];
+        self.closeBtn = closeBtn;
+        
+        NSLayoutConstraint *closeBtnLeft = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_topBar attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0];
+        NSLayoutConstraint *closeBtnTop = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_topBar attribute:NSLayoutAttributeTop multiplier:1.0f constant:0];
+        NSLayoutConstraint *closeBtnBottom = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_topBar attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0];
+        NSLayoutConstraint *closeBtnWidth = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0f constant:60.0f];
+        [_topBar addConstraints:@[closeBtnLeft, closeBtnTop, closeBtnBottom, closeBtnWidth]];
     }
     return _topBar;
 }
@@ -674,24 +701,17 @@ static CGFloat const playBtnSideLength = 60.0f;
 - (UIView *)bottomBar {
     if (!_bottomBar) {
         _bottomBar = [[UIView alloc] init];
-        _bottomBar.backgroundColor = [UIColor blackColor];
+        _bottomBar.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
         _bottomBar.layer.opacity = 0.0f;
         
         UILabel *label1 = [[UILabel alloc] init];
         label1.translatesAutoresizingMaskIntoConstraints = NO;
         label1.textAlignment = NSTextAlignmentCenter;
-        label1.text = @"00:00:00";
-        label1.font = [UIFont systemFontOfSize:12.0f];
+        label1.text = @"00:00";
+        label1.font = [UIFont systemFontOfSize:13.0f];
         label1.textColor = [UIColor whiteColor];
         [_bottomBar addSubview:label1];
         self.progressLabel = label1;
-        
-        NSLayoutConstraint *label1Left = [NSLayoutConstraint constraintWithItem:label1 attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0];
-        NSLayoutConstraint *label1Top = [NSLayoutConstraint constraintWithItem:label1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeTop multiplier:1.0f constant:0];
-        NSLayoutConstraint *label1Bottom = [NSLayoutConstraint constraintWithItem:label1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0];
-        NSLayoutConstraint *label1Width = [NSLayoutConstraint constraintWithItem:label1 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0f constant:65.0f];
-        [_bottomBar addConstraints:@[label1Left, label1Top, label1Bottom, label1Width]];
-        
         
         UIButton *fullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         fullScreenBtn.translatesAutoresizingMaskIntoConstraints = NO;
@@ -702,51 +722,79 @@ static CGFloat const playBtnSideLength = 60.0f;
         [_bottomBar addSubview:fullScreenBtn];
         self.zoomScreenBtn = fullScreenBtn;
         
-        NSLayoutConstraint *btnWidth = [NSLayoutConstraint constraintWithItem:fullScreenBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0f constant:40.0f];
-        NSLayoutConstraint *btnHeight = [NSLayoutConstraint constraintWithItem:fullScreenBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.0f constant:40.0f];
-        NSLayoutConstraint *btnRight = [NSLayoutConstraint constraintWithItem:fullScreenBtn attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeRight multiplier:1.0f constant:0];
-        NSLayoutConstraint *btnCenterY = [NSLayoutConstraint constraintWithItem:fullScreenBtn attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0];
-        [_bottomBar addConstraints:@[btnWidth, btnHeight, btnRight, btnCenterY]];
-        
-        
         UILabel *label2 = [[UILabel alloc] init];
         label2.translatesAutoresizingMaskIntoConstraints = NO;
         label2.textAlignment = NSTextAlignmentCenter;
-        label2.text = @"00:00:00";
-        label2.font = [UIFont systemFontOfSize:12.0f];
+        label2.text = @"00:00";
+        label2.font = [UIFont systemFontOfSize:13.0f];
         label2.textColor = [UIColor whiteColor];
         [_bottomBar addSubview:label2];
         self.totalDurationLabel = label2;
         
-        NSLayoutConstraint *label2Right = [NSLayoutConstraint constraintWithItem:label2 attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:fullScreenBtn attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0];
-        NSLayoutConstraint *label2Top = [NSLayoutConstraint constraintWithItem:label2 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeTop multiplier:1.0f constant:0];
-        NSLayoutConstraint *label2Bottom = [NSLayoutConstraint constraintWithItem:label2 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0];
-        NSLayoutConstraint *label2Width = [NSLayoutConstraint constraintWithItem:label2 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0f constant:65.0f];
-        [_bottomBar addConstraints:@[label2Right, label2Top, label2Bottom, label2Width]];
+        UIProgressView *loadingProgress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        loadingProgress.translatesAutoresizingMaskIntoConstraints = NO;
+        loadingProgress.backgroundColor = [UIColor clearColor];
+        loadingProgress.trackTintColor = [UIColor whiteColor];
+        loadingProgress.progressTintColor = [UIColor lightGrayColor];
+        [_bottomBar addSubview:loadingProgress];
+        self.loadingProgress = loadingProgress;
         
-        XLSlider *slider = [[XLSlider alloc] init];
-        slider.value = 0.0f;
-        slider.middleValue = 0.0f;
+        UISlider *slider = [[UISlider alloc] init];
         slider.translatesAutoresizingMaskIntoConstraints = NO;
+        slider.continuous = NO;
+        slider.backgroundColor = [UIColor clearColor];
+        slider.maximumTrackTintColor = [UIColor clearColor];
+        slider.minimumTrackTintColor = [UIColor redColor];
+        [slider setThumbImage:[UIImage imageNamed:@"SGVideoPlayer.bundle/video_slide"] forState:UIControlStateNormal];
+        [slider setThumbImage:[UIImage imageNamed:@"SGVideoPlayer.bundle/video_slide"] forState:UIControlStateHighlighted];
+        [slider addTarget:self action:@selector(didSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSliderTaped:)];
+        slider.userInteractionEnabled = YES;
+        [slider addGestureRecognizer:recognizer];
         [_bottomBar addSubview:slider];
         self.slider = slider;
-        __weak typeof(self) weakSelf = self;
-        slider.valueChangeBlock = ^(XLSlider *slider){
-            [weakSelf sliderValueChange:slider];
-        };
-        slider.finishChangeBlock = ^(XLSlider *slider){
-            [weakSelf finishChange];
-        };
-        slider.draggingSliderBlock = ^(XLSlider *slider){
-            [weakSelf dragSlider];
-        };
         
-        NSLayoutConstraint *sliderLeft = [NSLayoutConstraint constraintWithItem:slider attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:label1 attribute:NSLayoutAttributeRight multiplier:1.0f constant:0];
-        sliderLeft.priority = UILayoutPriorityDefaultLow;
-        NSLayoutConstraint *sliderRight = [NSLayoutConstraint constraintWithItem:slider attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:label2 attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0];
-        NSLayoutConstraint *sliderTop = [NSLayoutConstraint constraintWithItem:slider attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeTop multiplier:1.0f constant:0];
-        NSLayoutConstraint *sliderBottom = [NSLayoutConstraint constraintWithItem:slider attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_bottomBar attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0];
-        [_bottomBar addConstraints:@[sliderLeft, sliderRight, sliderTop, sliderBottom]];
+        [_bottomBar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0@700-[_progressLabel(50.0)]-0-[_slider]-0-[_totalDurationLabel(50.0)]-0-[_zoomScreenBtn(40.0)]-0-|"
+                                                                           options:NSLayoutFormatAlignAllCenterY
+                                                                           metrics:nil
+                                                                             views:NSDictionaryOfVariableBindings(_progressLabel, _slider, _totalDurationLabel, _zoomScreenBtn)]];
+        
+        [_bottomBar addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_progressLabel]-0-|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(_progressLabel)]];
+        
+        [_bottomBar addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_zoomScreenBtn]-0-|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(_zoomScreenBtn)]];
+        
+        [_bottomBar addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_totalDurationLabel]-0-|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(_totalDurationLabel)]];
+        [_bottomBar addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_slider]-0-|"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(_slider)]];
+        [_bottomBar addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_progressLabel]-0-[_loadingProgress]-0-[_totalDurationLabel]"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(_progressLabel, _loadingProgress, _totalDurationLabel)]];
+        
+        [_bottomBar addConstraint:
+         [NSLayoutConstraint constraintWithItem:_loadingProgress
+                                      attribute:NSLayoutAttributeCenterY
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:_slider
+                                      attribute:NSLayoutAttributeCenterY
+                                     multiplier:1.0f
+                                       constant:1]];
         
         [self updateConstraintsIfNeeded];
     }

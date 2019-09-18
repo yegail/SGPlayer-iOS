@@ -1,7 +1,7 @@
 //
 //  SGVideoPlayer.h
 //  SGPlayer iOS
-//
+//  播放视频、VR视频
 //  Created by TRS on 2019/5/8.
 //  Copyright © 2019 yegail. All rights reserved.
 //
