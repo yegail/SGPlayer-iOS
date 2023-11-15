@@ -64,6 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SGPlayerDecoder * decoder;      // default is [SGPlayerDecoder defaultDecoder]
 
 @property (nonatomic, copy, readonly) NSURL * contentURL;
+@property (nonatomic, strong) NSDictionary * httpHeaders;
 @property (nonatomic, assign, readonly) SGVideoType videoType;
 
 @property (nonatomic, strong, readonly, nullable) SGError * error;

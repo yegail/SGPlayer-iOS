@@ -473,7 +473,9 @@ static NSString * const AVMediaSelectionOptionTrackIDKey = @"MediaSelectionOptio
     
     [self.abstractPlayer.displayView playerOutputTypeAV];
     [self startBuffering];
-    self.avAsset = [AVURLAsset assetWithURL:self.abstractPlayer.contentURL];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"AVURLAssetHTTPHeaderFieldsKey"] = self.httpHeaders;
+    self.avAsset = [AVURLAsset URLAssetWithURL:self.abstractPlayer.contentURL options:dict];
     switch (self.abstractPlayer.videoType) {
         case SGVideoTypeNormal:
             [self setupAVPlayerItemAutoLoadedAsset:YES];

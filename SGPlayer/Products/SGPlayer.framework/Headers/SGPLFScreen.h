@@ -22,4 +22,4 @@ typedef UIScreen SGPLFScreen;
 
 #endif
 
-CGFloat SGPLFScreenGetScale();
+CGFloat SGPLFScreenGetScale(void);

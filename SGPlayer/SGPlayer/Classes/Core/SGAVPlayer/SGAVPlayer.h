@@ -27,6 +27,8 @@
 @property (nonatomic, weak, readonly) SGPlayer * abstractPlayer;
 @property (nonatomic, strong, readonly) AVPlayer * avPlayer;
 
+@property (nonatomic, strong) NSDictionary * httpHeaders;
+
 @property (nonatomic, assign, readonly) SGPlayerState state;
 @property (nonatomic, assign, readonly) CGSize presentationSize;
 @property (nonatomic, assign, readonly) NSTimeInterval bitrate;

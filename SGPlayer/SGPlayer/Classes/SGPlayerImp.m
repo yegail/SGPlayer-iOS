@@ -87,6 +87,7 @@
         {
             if (!self.avPlayer) {
                 self.avPlayer =[SGAVPlayer playerWithAbstractPlayer:self];
+                self.avPlayer.httpHeaders = self.httpHeaders;
             }
             [self.avPlayer replaceVideo];
         }
